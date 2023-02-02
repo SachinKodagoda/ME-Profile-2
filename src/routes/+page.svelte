@@ -7,6 +7,7 @@
   import './normalize.css';
   import Skill from './Skill.svelte';
   import './styles.css';
+
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
     const w = document.querySelector('.background_font_inner');
@@ -28,7 +29,7 @@
         scrollTrigger: {
           trigger: '.experience',
           start: 'top center',
-          markers: true,
+          // markers: true,
           scrub: 1
         }
       })
