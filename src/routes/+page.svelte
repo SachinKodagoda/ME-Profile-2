@@ -7,7 +7,7 @@
   import './normalize.css';
   import Skill from './Skill.svelte';
   import './styles.css';
-
+  let progressVal = 0;
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
     const w = document.querySelector('.background_font_inner');
@@ -19,7 +19,10 @@
         x: xTo,
         scrollTrigger: {
           trigger: '.background_font_inner',
-          scrub: 0.1
+          scrub: 0.1,
+          onUpdate: (self) => {
+            progressVal = self.progress * 1.5;
+          }
         }
       }
     );
@@ -42,7 +45,7 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section id="smooth-wrapper" class="app">
+<section id="smooth-wrapper" class="app" style="--progress: {progressVal}">
   <div id="smooth-content">
     <About />
     <Skill />

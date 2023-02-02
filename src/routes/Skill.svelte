@@ -15,14 +15,7 @@
           <span data-word="React,">React,</span>
           <span class="word word_special" data-word="Next.js">
             Next.js
-            <svg
-              width="50"
-              height="5"
-              viewBox="0 0 50 5"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="wave"
-            >
+            <svg width="50" height="5" viewBox="0 0 50 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="wave">
               <path
                 d="M1 2C2.5 1.55556 5.2 1 8 1C11.5 1 13.5 3 16 3C18.5 3 21 1 23.5 1C26 1 26.5 3 33 3C39.5 3 37.5 2 41.5 1.33333C45 0.75 47.6667 1.55556 49.5 2"
                 stroke="#8a0303"
@@ -157,11 +150,7 @@
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(
-      to top,
-      #fff 0% calc(var(--progress) * 100%),
-      rgba(255, 255, 255, 0.9) calc(var(--progress) * 100%) 100%
-    );
+    background-image: linear-gradient(to top, rgb(0, 183, 250) 0% calc(var(--progress) * 100%), #fff calc(var(--progress) * 100%) 100%);
     background-size: cover;
     background-repeat: no-repeat;
   }

@@ -62,7 +62,7 @@
       </g>
     </svg>
     <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" class="fullstack_engineer_txt">
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#8a0303" class="f_text" bind:this={fTxt}>FULL STACK ENGINEER</text>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="transparent" stroke="#000" stroke-width="2" class="f_text" bind:this={fTxt}>FULL STACK ENGINEER</text>
     </svg>
   </div>
   <div class="experience_ctr" bind:offsetHeight={experience} />
