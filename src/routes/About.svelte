@@ -1,6 +1,5 @@
 <script>
   import leftCorner from '$lib/images/left_corner.svg';
-  import rightCorner from '$lib/images/right_corner.svg';
   import AboutDetail from './AboutDetail.svelte';
   import AboutProfile from './AboutProfile.svelte';
   import AboutScroll from './AboutScroll.svelte';
@@ -22,7 +21,7 @@
     <img src={leftCorner} alt="left_corner" class="about_svg" />
   </div>
   <div class="about_svg_right">
-    <img src={rightCorner} alt="right_corner" class="about_svg" />
+    <img src={leftCorner} alt="right_corner" class="about_svg" />
   </div>
 </section>
 
@@ -65,14 +64,13 @@
   }
   .about_svg_left {
     position: absolute;
-    left: 0;
-    top: 0;
-    display: none;
+    left: -2px;
+    bottom: -2px;
   }
   .about_svg_right {
     position: absolute;
-    right: 0;
-    bottom: -10px;
-    display: none;
+    right: -2px;
+    bottom: -2px;
+    transform: scaleX(-1);
   }
 </style>

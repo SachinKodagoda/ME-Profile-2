@@ -6,25 +6,24 @@
   let experience = 0;
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const offset = fTxt?.getBBox().height / 2;
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: '.fullstack_engineer_txt',
-          markers: true,
-          start: `center-=${offset} top`,
-          pin: true,
-          // end: () => `+=${experience}`,
-          scrub: 1
-          // pinSpacing: false,
-          // pin: '.fullstack_text',
-          // pin: true,
-          // start: 'center center',
-          // end: '+=500', // default will be the "top top"
-          // toggleClass: '.show_txt'
-        }
-      })
-      .fromTo('.fullstack_engineer_txt', { opacity: 0 }, { opacity: 1 }, 0);
+    const offset = fTxt?.getBBox().height;
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.fullstack_engineer_txt',
+        markers: true,
+        start: `center-=${offset} top`,
+        pin: true,
+        // end: () => `+=${experience}`,
+        scrub: 1
+        // pinSpacing: false,
+        // pin: '.fullstack_text',
+        // pin: true,
+        // start: 'center center',
+        // end: '+=500', // default will be the "top top"
+        // toggleClass: '.show_txt'
+      }
+    });
+    // .fromTo('.f_text_back', { fill: '#162a43' }, { fill: '#000' }, 0);
     // ScrollTrigger.create();
   });
 
@@ -58,11 +57,11 @@
       <text fill="#fff" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">FULL STACK ENGINEER</text>
       <g mask="url(#m)">
         <rect fill="#fff" width="100%" height="100%" />
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#162a43" class="f_text_back"> FULL STACK ENGINEER</text>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#000" class="f_text_back"> FULL STACK ENGINEER</text>
       </g>
     </svg>
     <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" class="fullstack_engineer_txt">
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="transparent" stroke="#000" stroke-width="2" class="f_text" bind:this={fTxt}>FULL STACK ENGINEER</text>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="transparent" stroke="#162a43" stroke-width="2" class="f_text" bind:this={fTxt}>FULL STACK ENGINEER</text>
     </svg>
   </div>
   <div class="experience_ctr" bind:offsetHeight={experience} />
@@ -89,12 +88,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    opacity: 0;
     z-index: 1;
   }
   .experience_svg {
     width: 100%;
     display: block;
+    /* position: relative;
+    z-index: 2; */
   }
 
   .experience_ctr {
