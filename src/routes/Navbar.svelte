@@ -42,7 +42,7 @@
   .card1_navbar_humburger {
     display: block;
   }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     .card1_navbar_humburger {
       display: none;
     }
@@ -55,7 +55,7 @@
   .card1_navbar_item_seperator {
     display: none;
   }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     .card1_navbar_item_seperator {
       display: block;
     }
@@ -65,7 +65,7 @@
     cursor: pointer;
     display: none;
   }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     .card1_navbar_item {
       display: block;
     }

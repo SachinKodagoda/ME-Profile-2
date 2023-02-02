@@ -35,7 +35,7 @@
     position: relative;
     min-height: auto;
   }
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 768px) {
     .about {
       min-height: 100vh;
     }
@@ -49,7 +49,7 @@
     position: relative;
     height: auto;
   }
-  @media only screen and (min-width: 576px) {
+  @media only screen and (min-width: 425px) {
     .about_outer {
       padding: 32px;
     }

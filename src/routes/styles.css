@@ -4,6 +4,51 @@
   font-family: var(--font-body);
   color: var(--color-text);
   --progress: 0;
+  --s0: 1px;
+  --s1: 2px;
+  --s2: 4px;
+  --s3: 6px;
+  --s4: 8px;
+  --s5: 10px;
+  --s6: 12px;
+  --s7: 14px;
+  --s8: 16px;
+  --s9: 18px;
+  --s10: 20px;
+  --s11: 22px;
+  --s12: 24px;
+  --s13: 26px;
+  --s14: 28px;
+  --s15: 30px;
+  --s16: 32px;
+  --s17: 34px;
+  --s18: 36px;
+  --s19: 38px;
+  --s20: 40px;
+  --s21: 42px;
+  --s22: 44px;
+  --s23: 46px;
+  --s24: 48px;
+  --s25: 50px;
+  --s26: 52px;
+  --s27: 54px;
+  --s28: 56px;
+  --s29: 58px;
+  --s30: 60px;
+  --s31: 62px;
+  --s32: 64px;
+  --s33: 66px;
+  --s34: 68px;
+  --s34: 70px;
+
+  --mobile-s: 320px;
+  --mobile-m: 375px;
+  --mobile-l: 425px;
+  --tablet-s: 576px;
+  --tablet-m: 768px;
+  --tablet-l: 992px;
+  --laptop: 1024px;
+  --laptop-l: 1440px;
 }
 html,
 body {
@@ -18,6 +63,84 @@ body {
   -ms-scroll-chaining: none;
   overscroll-behavior: none;
   overflow-x: hidden;
+  --font1: var(--s8);
+  --font2: var(--s12);
+  --font3: var(--s16);
+  --gap-s: var(--s2);
+  --gap-m: var(--s4);
+  --gap-l: var(--s8);
+}
+
+@media only screen and (min-width: 375px) {
+  body {
+    --font1: var(--s10);
+    --font2: var(--s14);
+    --font3: var(--s18);
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  /* special */
+  body {
+    --font1: var(--s11);
+    --font2: var(--s15);
+    --font3: var(--s19);
+    --gap-s: var(--s3);
+    --gap-m: var(--s5);
+    --gap-l: var(--s9);
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  body {
+    --font1: var(--s12);
+    --font2: var(--s16);
+    --font3: var(--s20);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* special */
+  body {
+    --font1: var(--s13);
+    --font2: var(--s17);
+    --font3: var(--s21);
+    --gap-s: var(--s4);
+    --gap-m: var(--s6);
+    --gap-l: var(--s10);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    --font1: var(--s14);
+    --font2: var(--s18);
+    --font3: var(--s22);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* special */
+  body {
+    --font1: var(--s15);
+    --font2: var(--s19);
+    --font3: var(--s23);
+    --gap-s: var(--s5);
+    --gap-m: var(--s7);
+    --gap-l: var(--s11);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  /* special */
+  body {
+    --font1: var(--s16);
+    --font2: var(--s20);
+    --font3: var(--s24);
+    --gap-s: var(--s10);
+    --gap-m: var(--s15);
+    --gap-l: var(--s20);
+  }
 }
 
 #smooth-content {

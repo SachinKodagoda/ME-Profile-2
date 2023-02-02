@@ -13,13 +13,20 @@
     align-items: center;
     justify-content: center;
     color: #111;
-    font-size: 40px;
+    font-size: var(--s15);
     font-weight: 200;
     gap: 16px;
     padding: 16px;
   }
+
   .scroll_down_mouse1 {
     width: 34px;
     height: auto;
+  }
+
+  @media only screen and (min-width: 425px) {
+    .scroll_ctr1 {
+      font-size: var(--s20);
+    }
   }
 </style>
