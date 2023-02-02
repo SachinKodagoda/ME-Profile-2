@@ -3,10 +3,27 @@
   --body-color: #fff;
   font-family: var(--font-body);
   color: var(--color-text);
+  --progress: 0;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
   min-height: 100vh;
-  margin: 0;
   background-color: var(--body-color);
+  font-family: 'Catamaran', sans-serif;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+#smooth-content {
+  overflow: visible;
+  height: 400vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
