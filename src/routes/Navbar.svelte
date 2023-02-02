@@ -9,7 +9,7 @@
   <span class="card1_navbar_item_seperator"> - </span>
   <div class="card1_navbar_item">Skill</div>
   <span class="card1_navbar_item_seperator"> - </span>
-  <div class="card1_navbar_item">Services</div>
+  <div class="card1_navbar_item">Experience</div>
   <span class="card1_navbar_item_seperator"> - </span>
   <div class="card1_navbar_item">Contact</div>
   <div class="card1_navbar_humburger">

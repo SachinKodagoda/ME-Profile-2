@@ -1,11 +1,11 @@
 <script>
-  import Navbar from './Navbar.svelte';
-  import AboutSocial from './AboutSocial.svelte';
+  import leftCorner from '$lib/images/left_corner.svg';
+  import rightCorner from '$lib/images/right_corner.svg';
   import AboutDetail from './AboutDetail.svelte';
   import AboutProfile from './AboutProfile.svelte';
   import AboutScroll from './AboutScroll.svelte';
-  import leftCorner from '$lib/images/left_corner.svg';
-  import rightCorner from '$lib/images/right_corner.svg';
+  import AboutSocial from './AboutSocial.svelte';
+  import Navbar from './Navbar.svelte';
 </script>
 
 <section class="about">
@@ -33,6 +33,7 @@
     justify-content: space-between;
     position: relative;
     min-height: auto;
+    background: #fff;
   }
   @media only screen and (min-width: 768px) {
     .about {

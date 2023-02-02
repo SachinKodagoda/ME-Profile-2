@@ -1,6 +1,6 @@
 :root {
   --font-body: 'Catamaran', sans-serif;
-  --body-color: #fff;
+  --body-color: #000;
   font-family: var(--font-body);
   color: var(--color-text);
   --progress: 0;
@@ -144,7 +144,7 @@ body {
   body {
     --font1: var(--s16);
     --font2: var(--s20);
-    --font3: var(--s24);
+    --font3: var(--s30);
     --gap-s: var(--s10);
     --gap-m: var(--s15);
     --gap-l: var(--s20);

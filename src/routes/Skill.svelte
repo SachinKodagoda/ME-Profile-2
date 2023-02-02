@@ -1,105 +1,107 @@
-<div class="card2_outer">
-  <div class="card2">
-    <div class="card2_inner">
-      <div class="background_font">
-        <span class="background_font_inner" data-word="FULLSTACK">FULLSTACK</span>
-      </div>
-      <div class="card2_left" />
-      <div class="card2_right">
-        <div class="card2_right_inner">
-          <div>
-            <span data-word="Html,">Html,</span>
-            <span data-word="CSS,">CSS,</span>
-            <span data-word="JS">JS</span>
-          </div>
-          <div>
-            <span data-word="React,">React,</span>
-            <span class="word word_special" data-word="Next.js">
-              Next.js
-              <svg
-                width="50"
-                height="5"
-                viewBox="0 0 50 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="wave"
-              >
-                <path
-                  d="M1 2C2.5 1.55556 5.2 1 8 1C11.5 1 13.5 3 16 3C18.5 3 21 1 23.5 1C26 1 26.5 3 33 3C39.5 3 37.5 2 41.5 1.33333C45 0.75 47.6667 1.55556 49.5 2"
-                  stroke="#8a0303"
-                  stroke-linecap="round"
-                  class="wave_path"
-                />
-              </svg>
-            </span>
-          </div>
-          <div>
-            <span data-word="MySQL,">MySQL,</span>
-            <span data-word="Firebase,">Firebase</span>
-          </div>
-          <div>
-            <span data-word="Node,">Node,</span>
-            <span data-word="Python,">Python,</span>
-          </div>
-          <div>
-            <span data-word="PHP">PHP</span>
-            <span data-word="Git">Git</span>
-            <span data-word="etc.">etc.</span>
-          </div>
+<div class="skill">
+  <div class="skill_inner">
+    <div class="background_font">
+      <span class="background_font_inner" data-word="FULLSTACK">FULLSTACK</span>
+    </div>
+    <div class="skill_left" />
+    <div class="skill_right">
+      <div class="skill_right_inner">
+        <div>
+          <span data-word="Html,">Html,</span>
+          <span data-word="CSS,">CSS,</span>
+          <span data-word="JS">JS</span>
+        </div>
+        <div>
+          <span data-word="React,">React,</span>
+          <span class="word word_special" data-word="Next.js">
+            Next.js
+            <svg
+              width="50"
+              height="5"
+              viewBox="0 0 50 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="wave"
+            >
+              <path
+                d="M1 2C2.5 1.55556 5.2 1 8 1C11.5 1 13.5 3 16 3C18.5 3 21 1 23.5 1C26 1 26.5 3 33 3C39.5 3 37.5 2 41.5 1.33333C45 0.75 47.6667 1.55556 49.5 2"
+                stroke="#8a0303"
+                stroke-linecap="round"
+                class="wave_path"
+              />
+            </svg>
+          </span>
+        </div>
+        <div>
+          <span data-word="MySQL,">MySQL,</span>
+          <span data-word="Firebase,">Firebase</span>
+        </div>
+        <div>
+          <span data-word="Node,">Node,</span>
+          <span data-word="Python,">Python,</span>
+          <span data-word="PHP">PHP</span>
+        </div>
+        <div>
+          <span data-word="Git">Git</span>
+          <span data-word="etc.">etc.</span>
         </div>
       </div>
     </div>
-    <!-- card2_inner -->
   </div>
-  <!-- card2 -->
 </div>
 
 <style>
-  .card2 {
-    display: flex;
-    align-items: center;
-    flex: auto;
-    height: auto;
-  }
-  .card2_outer {
+  .skill {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    min-height: auto;
+    min-height: 100vh;
     background: #000;
   }
-  .card2_inner {
+
+  .skill_inner {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
     gap: 32px;
-    padding: 8px;
+    padding: var(--gap-l);
     position: relative;
     flex-direction: column;
+    font-size: var(--font2);
+    line-height: 1.8;
   }
-  .card2_left {
+
+  @media only screen and (min-width: 1024px) {
+    .skill_inner {
+      flex-direction: row;
+    }
+  }
+
+  .skill_left {
     background-image: url('https://images.unsplash.com/photo-1591727884968-cc11135a19b3?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzM3ODA3Mzc&ixlib=rb-4.0.3&q=80');
     background-position: center;
     background-repeat: no-repeat;
     border: 8px solid #fff;
     background-size: cover;
     display: block;
-    width: 90%;
+    max-width: 500px;
+    width: 100%;
     aspect-ratio: 1/1;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     border-radius: 32px;
     position: relative;
     z-index: 1;
   }
-  .card2_right {
+
+  .skill_right {
     border: 8px solid #111;
-    font-size: 40px;
     font-weight: 200;
     border-radius: 32px;
-    width: 90%;
+    max-width: 500px;
+    width: 100%;
     aspect-ratio: 1/1;
     display: flex;
     align-items: center;
@@ -109,9 +111,10 @@
     background: #fff;
     padding: 16px;
   }
-  .card2_right_inner {
-    font-size: 32px;
+
+  .skill_right_inner {
     font-weight: 400;
+    max-width: 400px;
   }
 
   .background_font {
@@ -119,7 +122,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 50vw;
+    width: 100vw;
     height: 100%;
     font-weight: 900;
     white-space: nowrap;

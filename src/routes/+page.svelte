@@ -1,15 +1,39 @@
 <script>
-  import logo from '$lib/images/dk-logo.svg';
-  import facebook from '$lib/images/facebook.svg';
-  import github from '$lib/images/github.svg';
-  import linkedin from '$lib/images/linkedin.svg';
-  import youtube from '$lib/images/youtube.svg';
-  import menu from '$lib/images/menu.svg';
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+  import { onMount } from 'svelte';
   import About from './About.svelte';
   import Experience from './Experience.svelte';
-  import Skill from './Skill.svelte';
   import './normalize.css';
+  import Skill from './Skill.svelte';
   import './styles.css';
+  onMount(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const w = document.querySelector('.background_font_inner');
+    const [xFrom, xTo] = ['100%', '-100%'];
+    gsap.fromTo(
+      w,
+      { x: xFrom },
+      {
+        x: xTo,
+        scrollTrigger: {
+          trigger: '.background_font_inner',
+          scrub: 0.1
+        }
+      }
+    );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: '.experience',
+          start: 'top center',
+          markers: true,
+          scrub: 1
+        }
+      })
+      .fromTo('.cloud1', { y: 0 }, { y: -800 }, 0);
+  });
 </script>
 
 <svelte:head>
