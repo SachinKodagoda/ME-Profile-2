@@ -24,20 +24,15 @@
     align-items: center;
     justify-content: center;
   }
-
-  .social_icon {
-    width: 100px;
-    height: 100px;
-  }
   .social_icon_ctr {
     width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: var(--gap-l);
   }
   .social_icon_img {
-    width: 100%;
-    height: 100%;
+    width: var(--social-icon);
+    height: auto;
   }
 </style>

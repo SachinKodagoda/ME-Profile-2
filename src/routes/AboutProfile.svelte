@@ -40,7 +40,7 @@
   }
 
   .about_inner_right {
-    width: 250px;
+    width: var(--profile-img);
     aspect-ratio: 1/1;
   }
 

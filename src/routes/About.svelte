@@ -4,7 +4,6 @@
   import AboutDetail from './AboutDetail.svelte';
   import AboutProfile from './AboutProfile.svelte';
   import AboutScroll from './AboutScroll.svelte';
-  import LeftCorner from './AboutScroll.svelte';
   import leftCorner from '$lib/images/left_corner.svg';
   import rightCorner from '$lib/images/right_corner.svg';
 </script>
@@ -45,20 +44,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: var(--gap-l);
     position: relative;
     height: auto;
   }
-  @media only screen and (min-width: 425px) {
-    .about_outer {
-      padding: 32px;
-    }
-  }
+
   .about_inner {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: var(--gap-l);
     position: relative;
     flex-direction: row;
     flex-wrap: wrap-reverse;

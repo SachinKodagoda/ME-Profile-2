@@ -20,7 +20,7 @@
   }
 
   .scroll_down_mouse1 {
-    width: 34px;
+    width: calc(var(--social-icon) / 3);
     height: auto;
   }
 

@@ -69,6 +69,8 @@ body {
   --gap-s: var(--s2);
   --gap-m: var(--s4);
   --gap-l: var(--s8);
+  --social-icon: 60px;
+  --profile-img: 250px;
 }
 
 @media only screen and (min-width: 375px) {
@@ -88,6 +90,8 @@ body {
     --gap-s: var(--s3);
     --gap-m: var(--s5);
     --gap-l: var(--s9);
+    --social-icon: 65px;
+    --profile-img: 300px;
   }
 }
 
@@ -108,6 +112,8 @@ body {
     --gap-s: var(--s4);
     --gap-m: var(--s6);
     --gap-l: var(--s10);
+    --social-icon: 70px;
+    --profile-img: 350px;
   }
 }
 
@@ -128,6 +134,8 @@ body {
     --gap-s: var(--s5);
     --gap-m: var(--s7);
     --gap-l: var(--s11);
+    --social-icon: 80px;
+    --profile-img: 400px;
   }
 }
 
@@ -140,6 +148,8 @@ body {
     --gap-s: var(--s10);
     --gap-m: var(--s15);
     --gap-l: var(--s20);
+    --social-icon: 100px;
+    --profile-img: 500px;
   }
 }
 
