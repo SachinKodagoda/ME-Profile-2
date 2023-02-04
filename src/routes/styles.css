@@ -49,6 +49,10 @@
   --tablet-l: 992px;
   --laptop: 1024px;
   --laptop-l: 1440px;
+
+  --l-color1: rgba(111, 238, 141, 1);
+  --l-color2: rgba(23, 201, 100, 0.6);
+  --l-color3: #fff;
 }
 html,
 body {

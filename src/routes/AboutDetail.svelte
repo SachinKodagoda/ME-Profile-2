@@ -1,18 +1,17 @@
 <script>
   import download from '$lib/images/download.svg';
+  import name_back from '$lib/images/name_back.jpg';
 </script>
 
 <section class="about_details">
   <div class="title_ctr">
-    <div class="title">Duminda Kodagoda</div>
+    <div class="title" style={`background-image: url(${name_back})`}>Duminda Kodagoda</div>
     <div class="sub_title_ctr">
       <div class="sub_title_line" />
       <div class="sub_title">Web Developer</div>
     </div>
   </div>
-  <div class="description">
-    I'm a creative designer and developer who is passionate about web technologies.
-  </div>
+  <div class="description">I'm a creative designer and developer who is passionate about web technologies.</div>
   <div class="download_ctr">
     <span>DOWNLOAD MY CV</span>
     <img src={download} alt="download" class="download_icon" />
@@ -31,6 +30,12 @@
   .title {
     font-weight: 800;
     font-size: var(--font3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: cover;
+    color: transparent;
+    /* -webkit-text-stroke: 1px #000;
+    text-stroke: 1px #000; */
   }
   .sub_title {
     font-weight: 300;

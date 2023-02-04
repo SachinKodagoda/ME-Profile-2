@@ -150,7 +150,7 @@
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(to top, rgb(0, 183, 250) 0% calc(var(--progress) * 100%), #fff calc(var(--progress) * 100%) 100%);
+    background-image: linear-gradient(to top, var(--l-color1) 0%, var(--l-color2) calc(var(--progress) * 100%) calc(var(--progress) * 100%), var(--l-color3) calc(var(--progress) * 100%) 100%);
     background-size: cover;
     background-repeat: no-repeat;
   }

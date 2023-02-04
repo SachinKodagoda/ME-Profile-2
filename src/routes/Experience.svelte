@@ -1,4 +1,8 @@
 <script lang="ts">
+  import butterfly1 from '$lib/images/butterfly1.gif';
+  import butterfly2 from '$lib/images/butterfly2.gif';
+  import hero from '$lib/images/hero1.jpg';
+  import inkmask from '$lib/images/inkmask.png';
   import gsap from 'gsap';
   import ScrollTrigger from 'gsap/ScrollTrigger';
   import { onMount } from 'svelte';
@@ -12,6 +16,7 @@
         trigger: '.fullstack_engineer_txt',
         markers: true,
         start: `center-=${offset} top`,
+        // end: 'center 80%',
         pin: true,
         // end: () => `+=${experience}`,
         scrub: 1
@@ -64,7 +69,16 @@
       <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="transparent" stroke="#162a43" stroke-width="2" class="f_text" bind:this={fTxt}>FULL STACK ENGINEER</text>
     </svg>
   </div>
-  <div class="experience_ctr" bind:offsetHeight={experience} />
+  <div class="experience_ctr" bind:offsetHeight={experience}>
+    <section class="hero_section">
+      <div style={`background-image: url(${butterfly1})`} class="butterfly1" />
+      <div style={`background-image: url(${butterfly2})`} class="butterfly2" />
+      <div class="hero_ctr">
+        <img src={hero} alt="hero" class="hero_img" />
+        <div class="mask_ctr" style={`background-image: url(${hero}); -webkit-mask-image: url(${inkmask}); mask-image: url(${inkmask});`} />
+      </div>
+    </section>
+  </div>
 </section>
 
 <style>
@@ -100,5 +114,83 @@
   .experience_ctr {
     background: #fff;
     min-height: 100vh;
+  }
+
+  .hero_section {
+    position: relative;
+  }
+
+  .hero_ctr {
+    position: relative;
+  }
+
+  .hero_img {
+    width: 100vw;
+    height: auto;
+    display: block;
+  }
+
+  .mask_ctr {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-position: 0% 50%;
+    mask-position: 0% 50%;
+    -webkit-mask-size: 4900% 100%;
+    mask-size: 4900% 100%;
+    z-index: 1;
+    transition: -webkit-mask-position;
+    background: #000 !important;
+    /* -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); */
+  }
+
+  .mask_ctr:hover {
+    animation: ink 700ms steps(45) forwards;
+  }
+
+  @keyframes ink {
+    0% {
+      -webkit-mask-position: 0 50%;
+      mask-position: 0 50%;
+    }
+    100% {
+      -webkit-mask-position: 100% 50%;
+      mask-position: 100% 50%;
+    }
+  }
+
+  .butterfly1 {
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    background-position: 81% 27%;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    /* mix-blend-mode: hard-light; */
+    /* will-change: transform; */
+    left: 0;
+    top: 0;
+    /* display: none; */
+  }
+
+  .butterfly2 {
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    background-position: 100% 60%;
+    background-repeat: no-repeat;
+    /* mix-blend-mode: overlay; */
+    opacity: 0.8;
+    left: 0;
+    bottom: 0;
+    /* display: none; */
   }
 </style>
