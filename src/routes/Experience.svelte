@@ -23,7 +23,7 @@
       scrollTrigger: {
         trigger: '.mask_ctr',
         markers: true,
-        start: 'top 20%',
+        start: 'top 30%',
         scrub: 1,
         toggleClass: 'mask_animate'
       }
@@ -146,7 +146,7 @@
   }
 
   :global(.mask_animate) {
-    animation: ink 700ms steps(45) forwards;
+    animation: ink 0.7s steps(45) forwards 0.4s;
   }
 
   @keyframes ink {
