@@ -51,7 +51,6 @@
           <image xlink:href="https://assets.codepen.io/721952/cloud1Mask.jpg" width="1200" height="800" />
         </g>
       </mask>
-      <!-- <text x="50%" y="10%" dominant-baseline="middle" text-anchor="middle" fill="#fff">I'M AN</text> -->
       <text fill="url(#rainbow)">
         <tspan x="50%" y="10%" dominant-baseline="middle" text-anchor="middle"> I'M AN </tspan>
         <tspan x="50%" y="30%" dominant-baseline="middle" text-anchor="middle"> EXPERIENCED </tspan>
