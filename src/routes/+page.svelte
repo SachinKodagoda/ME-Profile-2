@@ -1,6 +1,6 @@
 <script>
-  import gsap from 'gsap';
-  import ScrollTrigger from 'gsap/ScrollTrigger';
+  import gsap from 'gsap-trial';
+  import ScrollTrigger from 'gsap-trial/ScrollTrigger';
   import { onMount } from 'svelte';
   import About from './About.svelte';
   import Experience from './Experience.svelte';
@@ -56,7 +56,7 @@
 <style>
   #smooth-content {
     overflow: visible;
-    height: 400vh;
+    height: 500vh;
     display: flex;
     width: 100%;
     flex-direction: column;
