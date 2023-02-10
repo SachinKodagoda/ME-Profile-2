@@ -27,7 +27,7 @@
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '#hero_img',
+        trigger: '#time_line_id',
         start: 'top center',
         scrub: 1.5,
         // markers: true,
@@ -128,9 +128,9 @@
       <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="transparent" stroke="#162a43" stroke-width="2" class="f_text" bind:this={fTxt}>FULL STACK ENGINEER</text>
     </svg>
   </div>
-  <section class="hero_section" bind:offsetHeight={experience}>
+  <section class="hero_section" bind:offsetHeight={experience} id="time_line_id">
     <div class="time_line">
-      <svg id="time_line_id" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="time_line_svg" preserveAspectRatio="none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="time_line_svg" preserveAspectRatio="none">
         <path class="line01 line" d="M 245 100 265 100" />
         <path class="line02 line" d="M 245 200 265 200" />
         <path class="line03 line" d="M 245 300 265 300" />
@@ -152,15 +152,15 @@
         <text class="second txt text04_1" x="300" y="400" text-anchor="start" dominant-baseline="middle">Freelancer</text>
         <text class="last txt text04_2" x="300" y="435" text-anchor="start" dominant-baseline="middle">@WDA</text>
 
-        <text class="first txt text05" x="175" y="500" text-anchor="end" dominant-baseline="middle">from 2021</text>
+        <text class="first txt text05" x="175" y="500" text-anchor="end" dominant-baseline="middle">From 2021</text>
         <text class="second txt text05_1" x="300" y="500" text-anchor="start" dominant-baseline="middle">Senior FullStack Engineer</text>
         <text class="last txt text05_2" x="300" y="535" text-anchor="start" dominant-baseline="middle">@Noon Lanka (pvt) Ltd</text>
 
         <path
           class="theLine"
-          d="M 210 0 C 233.709 62.871 262.885 -3.26 255 109.552 V 200 V 300 V 400 V 500 C 259 579 288 534 314 600"
+          d="M 210 0 C 233.709 62.871 262.885 -3.26 255 109.552 V 200 V 300 V 400 V 500 C 256 553 296 597 343 597 H 600"
           fill="none"
-          stroke="#000"
+          stroke="#800000"
           stroke-width="5px"
           stroke-linecap="round"
         />
@@ -179,6 +179,7 @@
       <img src={fire} alt="fire" class="fire" />
     </div>
   </section>
+  <div class="other_area" />
 </section>
 
 <style>
@@ -314,8 +315,10 @@
   }
 
   .ball {
-    fill: #000;
+    fill: #bf0000;
     visibility: hidden;
+    stroke: #000;
+    stroke-width: 2px;
   }
 
   .ball00 {
@@ -336,19 +339,19 @@
   }
 
   .first {
-    fill: #400000;
-    font-weight: 100;
+    fill: #4b0803;
+    font-weight: 600;
     font-size: 14px;
   }
 
   .second {
     fill: rgba(0, 0, 0, 1);
-    font-weight: 400;
+    font-weight: 600;
   }
 
   .last {
-    fill: rgba(0, 0, 0, 0.4);
-    font-weight: 200;
+    fill: rgba(0, 0, 0, 0.5);
+    font-weight: 100;
     font-size: 26px;
   }
 
@@ -363,5 +366,11 @@
     opacity: 0.8;
     left: 0;
     top: 0;
+  }
+
+  .other_area {
+    height: 50vh;
+    width: 100%;
+    background: #fff;
   }
 </style>
