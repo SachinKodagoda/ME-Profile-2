@@ -1,5 +1,9 @@
+<script>
+  import profile from '$lib/images/profile1.jpg';
+</script>
+
 <div class="about_inner_right">
-  <div class="about_profile_ctr" id="about_profile_ctr" />
+  <div class="about_profile_ctr" id="about_profile_ctr" style={`background-image: url(${profile})`} />
 </div>
 
 <style>
@@ -50,16 +54,15 @@
     background: #111;
     border-radius: 50%;
     overflow: hidden;
-    background-image: url('https://images.unsplash.com/photo-1591727884968-cc11135a19b3?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzM3ODA3Mzc&ixlib=rb-4.0.3&q=80');
     background-position: center;
     background-repeat: no-repeat;
-    border: 14px solid rgba(255, 255, 255, 0.2);
+    border: 14px solid rgba(0, 0, 0, 0.3);
     border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
     transition: border-radius 400ms ease-in-out;
     background-size: 120% auto;
     -webkit-animation: fancy_border 12s ease-in-out infinite;
     animation: fancy_border 12s ease-in-out infinite;
-    box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.3);
-    outline: 2px solid #000;
+    box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.1);
+    outline: 10px solid #000;
   }
 </style>

@@ -1,8 +1,7 @@
 <script lang="ts">
-  import butterfly1 from '$lib/images/butterfly1.gif';
-  import butterfly2 from '$lib/images/butterfly2.gif';
-  import hero from '$lib/images/hero.jpg';
+  import fire from '$lib/images/fire.gif';
   import inkmask from '$lib/images/inkmask.png';
+  import hero from '$lib/images/main.jpg';
   import gsap from 'gsap-trial';
   import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin';
   import MotionPathPlugin from 'gsap-trial/MotionPathPlugin';
@@ -21,7 +20,6 @@
         trigger: '.fullstack_engineer_txt',
         start: `center-=${offset} top`,
         pin: true,
-
         end: 'bottom 25%',
         scrub: 1.5
       }
@@ -29,10 +27,11 @@
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '.mask_ctr',
-        start: 'top 10%',
+        trigger: '#hero_img',
+        start: 'top center',
         scrub: 1.5,
-        toggleClass: 'mask_animate'
+        // markers: true,
+        toggleClass: { targets: '.mask_ctr', className: 'mask_animate' }
       }
     });
     tl.to('.f_text', { fill: 'red', duration: 0.4 });
@@ -47,11 +46,26 @@
           ease: 'elastic(2.5, 1)'
         }
       })
-      .to('.ball01, .text01, .text01_1, .text01_2', {}, 0.2)
-      .to('.ball02, .text02, .text02_1, .text02_2', {}, 0.3)
-      .to('.ball03, .text03, .text03_1, .text03_2', {}, 0.4)
-      .to('.ball04, .text04, .text04_1, .text04_2', {}, 0.5)
-      .to('.ball05, .text05, .text05_1, .text05_2', {}, 0.8);
+      .to('.ball01, .text01, .line01', {}, 0.2)
+      .to('.ball02, .text02, .line02', {}, 0.3)
+      .to('.ball03, .text03, .line03', {}, 0.4)
+      .to('.ball04, .text04, .line04', {}, 0.5)
+      .to('.ball05, .text05, .line05', {}, 0.8);
+
+    const lines = gsap
+      .timeline({
+        defaults: {
+          duration: 0.05,
+          autoAlpha: 1,
+          transformOrigin: 'center left',
+          ease: 'elastic(2.5, 1)'
+        }
+      })
+      .to(' .text01_1, .text01_2', {}, 0.2)
+      .to(' .text02_1, .text02_2', {}, 0.3)
+      .to(' .text03_1, .text03_2', {}, 0.4)
+      .to(' .text04_1, .text04_2', {}, 0.5)
+      .to(' .text05_1, .text05_2', {}, 0.8);
 
     gsap
       .timeline({
@@ -59,7 +73,6 @@
         scrollTrigger: {
           trigger: '#time_line_id',
           scrub: true,
-          markers: true,
           start: 'top center',
           end: 'bottom 80%'
         }
@@ -77,7 +90,8 @@
         },
         0
       )
-      .add(pulses, 0);
+      .add(pulses, 0)
+      .add(lines, 0);
   });
 </script>
 
@@ -117,53 +131,52 @@
   <section class="hero_section" bind:offsetHeight={experience}>
     <div class="time_line">
       <svg id="time_line_id" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="time_line_svg" preserveAspectRatio="none">
-        <path class="line01 line" d="M 0 100 600 100" stroke-dasharray="10 10" />
-        <path class="line02 line" d="M 0 200 600 200" stroke-dasharray="10 10" />
-        <path class="line03 line" d="M 0 300 600 300" stroke-dasharray="10 10" />
-        <path class="line04 line" d="M 0 400 600 400" stroke-dasharray="10 10" />
-        <path class="line05 line" d="M 0 500 600 500" stroke-dasharray="10 10" />
-        <text class="first txt text01" x="90" y="80" text-anchor="middle" dominant-baseline="middle" />
-        <text class="second txt text01_1" x="450" y="80" text-anchor="middle" dominant-baseline="middle">BSc (Hons) in IT</text>
-        <text class="last txt text01_2" x="450" y="120" text-anchor="middle" dominant-baseline="middle">@SLIIT</text>
+        <path class="line01 line" d="M 245 100 265 100" />
+        <path class="line02 line" d="M 245 200 265 200" />
+        <path class="line03 line" d="M 245 300 265 300" />
+        <path class="line04 line" d="M 245 400 265 400" />
+        <path class="line05 line" d="M 245 500 265 500" />
+        <text class="first txt text01" x="175" y="100" text-anchor="end" dominant-baseline="middle" />
+        <text class="second txt text01_1" x="300" y="100" text-anchor="start" dominant-baseline="middle">BSc (Hons) in IT</text>
+        <text class="last txt text01_2" x="300" y="135" text-anchor="start" dominant-baseline="middle">@SLIIT</text>
 
-        <text class="first txt text02" x="90" y="180" text-anchor="middle" dominant-baseline="middle">2015 - 2017</text>
-        <text class="second txt text02_1" x="450" y="180" text-anchor="middle" dominant-baseline="middle">Senior SE</text>
-        <text class="last txt text02_2" x="450" y="220" text-anchor="middle" dominant-baseline="middle">@Arit Co., Ltd</text>
+        <text class="first txt text02" x="175" y="200" text-anchor="end" dominant-baseline="middle">2015 - 2017</text>
+        <text class="second txt text02_1" x="300" y="200" text-anchor="start" dominant-baseline="middle">Senior Software Engineer</text>
+        <text class="last txt text02_2" x="300" y="235" text-anchor="start" dominant-baseline="middle">@Arit Co., Ltd</text>
 
-        <text class="first txt text03" x="90" y="280" text-anchor="middle" dominant-baseline="middle">2017 - 2020</text>
-        <text class="second txt text03_1" x="450" y="280" text-anchor="middle" dominant-baseline="middle">Senior SE</text>
-        <text class="last txt text03_2" x="450" y="320" text-anchor="middle" dominant-baseline="middle">@Takumi Tech (pvt) Ltd</text>
+        <text class="first txt text03" x="175" y="300" text-anchor="end" dominant-baseline="middle">2017 - 2020</text>
+        <text class="second txt text03_1" x="300" y="300" text-anchor="start" dominant-baseline="middle">Senior Software Engineer</text>
+        <text class="last txt text03_2" x="300" y="335" text-anchor="start" dominant-baseline="middle">@Takumi Tech (pvt) Ltd</text>
 
-        <text class="first txt text04" x="90" y="380" text-anchor="middle" dominant-baseline="middle">2020 - 2021</text>
-        <text class="second txt text04_1" x="450" y="380" text-anchor="middle" dominant-baseline="middle">Freelancer</text>
-        <text class="last txt text04_2" x="450" y="420" text-anchor="middle" dominant-baseline="middle">@WDA</text>
+        <text class="first txt text04" x="175" y="400" text-anchor="end" dominant-baseline="middle">2020 - 2021</text>
+        <text class="second txt text04_1" x="300" y="400" text-anchor="start" dominant-baseline="middle">Freelancer</text>
+        <text class="last txt text04_2" x="300" y="435" text-anchor="start" dominant-baseline="middle">@WDA</text>
 
-        <text class="first txt text05" x="90" y="480" text-anchor="middle" dominant-baseline="middle">from 2021</text>
-        <text class="second txt text05_1" x="450" y="480" text-anchor="middle" dominant-baseline="middle">FullStack Engineer</text>
-        <text class="last txt text05_2" x="450" y="520" text-anchor="middle" dominant-baseline="middle">@Noon Lanka (pvt) Ltd</text>
+        <text class="first txt text05" x="175" y="500" text-anchor="end" dominant-baseline="middle">from 2021</text>
+        <text class="second txt text05_1" x="300" y="500" text-anchor="start" dominant-baseline="middle">Senior FullStack Engineer</text>
+        <text class="last txt text05_2" x="300" y="535" text-anchor="start" dominant-baseline="middle">@Noon Lanka (pvt) Ltd</text>
 
         <path
           class="theLine"
-          d="M 210.369 0 C 233.709 62.871 262.885 -3.26 260 109.552 V 200 V 300 V 400 V 500 C 260.94 578.307 280.39 591.922 315.401 558.856"
+          d="M 210 0 C 233.709 62.871 262.885 -3.26 255 109.552 V 200 V 300 V 400 V 500 C 259 579 288 534 314 600"
           fill="none"
-          stroke="#800000"
+          stroke="#000"
           stroke-width="5px"
           stroke-linecap="round"
         />
 
         <circle class="ball ball00" r="5" cx="50" cy="100" />
-        <circle class="ball ball01" r="6" cx="260" cy="100" />
-        <circle class="ball ball02" r="6" cx="260" cy="200" />
-        <circle class="ball ball03" r="6" cx="260" cy="300" />
-        <circle class="ball ball04" r="6" cx="260" cy="400" />
-        <circle class="ball ball05" r="6" cx="260" cy="500" />
+        <circle class="ball ball01" r="4" cx="255" cy="100" />
+        <circle class="ball ball02" r="4" cx="255" cy="200" />
+        <circle class="ball ball03" r="4" cx="255" cy="300" />
+        <circle class="ball ball04" r="4" cx="255" cy="400" />
+        <circle class="ball ball05" r="4" cx="255" cy="500" />
       </svg>
     </div>
     <div class="hero_ctr">
-      <img src={hero} alt="hero" class="hero_img" />
+      <img src={hero} alt="hero" class="hero_img" id="hero_img" />
       <div id="mask" class="mask_ctr" style={`background-image: url(${hero}); -webkit-mask-image: url(${inkmask}); mask-image: url(${inkmask});`} />
-      <div style={`background-image: url(${butterfly1})`} class="butterfly1" />
-      <div style={`background-image: url(${butterfly2})`} class="butterfly2" />
+      <img src={fire} alt="fire" class="fire" />
     </div>
   </section>
 </section>
@@ -202,17 +215,48 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
+    flex-direction: column-reverse;
+    position: relative;
+    isolation: isolate;
+  }
+  .hero_section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 100%;
+    height: calc(100% + 10px);
+    z-index: -1;
+    background: #fff;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .hero_section {
+      flex-direction: row;
+    }
   }
 
   .time_line {
     flex: none;
-    width: calc(50vw - 40px);
+    width: calc(100vw - 32px);
+  }
+
+  @media only screen and (min-width: 768px) {
+    .time_line {
+      width: calc(50vw - 40px);
+    }
   }
 
   .hero_ctr {
     position: relative;
     flex: none;
-    width: calc(50vw - 40px);
+    width: calc(100vw - 32px);
+  }
+
+  @media only screen and (min-width: 768px) {
+    .hero_ctr {
+      width: calc(50vw - 40px);
+    }
   }
 
   .hero_img {
@@ -262,29 +306,6 @@
     }
   }
 
-  .butterfly1 {
-    height: 100%;
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    background-position: 50% 30%;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    left: 0;
-    top: 0;
-  }
-
-  .butterfly2 {
-    height: 100%;
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    left: 0;
-    bottom: 0;
-  }
   .time_line_svg {
     height: 100%;
     width: auto;
@@ -293,7 +314,7 @@
   }
 
   .ball {
-    fill: #bf0000;
+    fill: #000;
     visibility: hidden;
   }
 
@@ -303,14 +324,15 @@
 
   .line {
     fill: none;
-    stroke: #800000;
-    stroke-width: 1px;
+    stroke: #000;
+    stroke-width: 2px;
     stroke-linecap: round;
-    opacity: 0.5;
+    opacity: 0;
   }
 
   .txt {
     visibility: hidden;
+    font-size: 28px;
   }
 
   .first {
@@ -322,12 +344,24 @@
   .second {
     fill: rgba(0, 0, 0, 1);
     font-weight: 400;
-    font-size: 14px;
   }
 
   .last {
     fill: rgba(0, 0, 0, 0.4);
     font-weight: 200;
-    font-size: 13px;
+    font-size: 26px;
+  }
+
+  .fire {
+    display: block;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    position: absolute;
+    background-position: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    left: 0;
+    top: 0;
   }
 </style>
