@@ -50,9 +50,12 @@
   --laptop: 1024px;
   --laptop-l: 1440px;
 
-  --l-color1: rgba(111, 238, 141, 1);
-  --l-color2: rgba(23, 201, 100, 0.6);
+  --l-color1: #ff6d0a;
+  --l-color2: #ffc000;
   --l-color3: #fff;
+  /* FFC000 */
+  /* 420c09 */
+  /* e3242b */
 }
 html,
 body {

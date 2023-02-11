@@ -158,7 +158,7 @@
 
         <path
           class="theLine"
-          d="M 210 0 C 233.709 62.871 262.885 -3.26 255 109.552 V 200 V 300 V 400 V 500 C 256 553 296 597 343 597 H 600"
+          d="M 210 0 C 233.709 62.871 262.885 -3.26 255 109.552 V 200 V 300 V 400 V 500 C 256 553 296 597 343 597"
           fill="none"
           stroke="#800000"
           stroke-width="5px"
@@ -284,10 +284,7 @@
     mask-size: cover;
     -webkit-mask-position: 0% 50%;
     mask-position: 0% 50%;
-    /* -webkit-mask-size: 4900% 100%;
-    mask-size: 4900% 100%; */
     z-index: 1;
-    transition: -webkit-mask-position;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
   }
