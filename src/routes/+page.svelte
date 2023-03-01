@@ -5,6 +5,7 @@
   import { onMount } from 'svelte';
   import About from './About.svelte';
   import Experience from './Experience.svelte';
+  import Footer from './Footer.svelte';
   import './normalize.css';
   import Skill from './Skill.svelte';
   import './styles.css';
@@ -56,6 +57,7 @@
     <About />
     <Skill />
     <Experience />
+    <Footer />
   </div>
 </section>
 
