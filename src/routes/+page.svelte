@@ -1,15 +1,22 @@
 <script>
-  import gsap from 'gsap';
-  import ScrollTrigger from 'gsap/ScrollTrigger';
+  import gsap from 'gsap-trial';
+  import ScrollSmoother from 'gsap-trial/ScrollSmoother';
+  import ScrollTrigger from 'gsap-trial/ScrollTrigger';
   import { onMount } from 'svelte';
   import About from './About.svelte';
   import Experience from './Experience.svelte';
+  import Footer from './Footer.svelte';
   import './normalize.css';
   import Skill from './Skill.svelte';
   import './styles.css';
   let progressVal = 0;
   onMount(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    ScrollSmoother.create({
+      smooth: 1,
+      effects: true,
+      smoothTouch: 0.1
+    });
     const w = document.querySelector('.background_font_inner');
     const [xFrom, xTo] = ['100%', '-100%'];
     gsap.fromTo(
@@ -50,13 +57,14 @@
     <About />
     <Skill />
     <Experience />
+    <Footer />
   </div>
 </section>
 
 <style>
   #smooth-content {
     overflow: visible;
-    height: 400vh;
+    height: 800vh;
     display: flex;
     width: 100%;
     flex-direction: column;

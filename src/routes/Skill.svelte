@@ -1,9 +1,12 @@
+<script>
+  import profile from '$lib/images/profile5.jpg';
+</script>
+
 <div class="skill">
   <div class="skill_inner">
     <div class="background_font">
       <span class="background_font_inner" data-word="FULLSTACK">FULLSTACK</span>
     </div>
-    <div class="skill_left" />
     <div class="skill_right">
       <div class="skill_right_inner">
         <div>
@@ -40,6 +43,7 @@
         </div>
       </div>
     </div>
+    <div class="skill_left" style={`background-image: url(${profile})`} />
   </div>
 </div>
 
@@ -62,7 +66,7 @@
     gap: 32px;
     padding: var(--gap-l);
     position: relative;
-    flex-direction: column;
+    flex-direction: column-reverse;
     font-size: var(--font2);
     line-height: 1.8;
   }
@@ -74,7 +78,6 @@
   }
 
   .skill_left {
-    background-image: url('https://images.unsplash.com/photo-1591727884968-cc11135a19b3?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzM3ODA3Mzc&ixlib=rb-4.0.3&q=80');
     background-position: center;
     background-repeat: no-repeat;
     border: 8px solid #fff;
