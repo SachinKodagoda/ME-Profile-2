@@ -4,72 +4,138 @@
   import linkedin from '$lib/images/icon-linkedin.svg';
   import medium from '$lib/images/icon-medium.svg';
   import youtube from '$lib/images/icon-youtube.svg';
+  import gsap from 'gsap-trial';
+  import ScrollTrigger from 'gsap-trial/ScrollTrigger';
+  import { onMount } from 'svelte';
+  let curve = 0;
+  const maxCurveVh = 20;
+  onMount(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: '.footer_rounded_div',
+      scrub: 0.1,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      onUpdate: (self) => {
+        curve = maxCurveVh - self.progress * maxCurveVh;
+      }
+    });
+  });
+
   function handleClick() {
     alert('clicked');
   }
 </script>
 
+<div class="footer_rounded_div" style="height: {curve}vh">
+  <div class="footer_rounded_div_inner" />
+</div>
 <section class="footer">
-  <div class="footer_left">
-    <div class="social">
-      <div class="social_copy">MORE ABOUT ME</div>
-      <div class="social_icon_outer">
-        <div class="social_icon_ctr"><img src={github} alt="" class="social_icon" /></div>
-        <div class="social_icon_ctr"><img src={codepen} alt="" class="social_icon" /></div>
-        <div class="social_icon_ctr"><img src={medium} alt="" class="social_icon" /></div>
-        <div class="social_icon_ctr"><img src={youtube} alt="" class="social_icon" /></div>
-        <div class="social_icon_ctr"><img src={linkedin} alt="" class="social_icon" /></div>
+  <div class="footer_inner">
+    <div class="footer_left">
+      <div class="social">
+        <div class="social_copy">FIND MORE ABOUT ME</div>
+        <div class="social_icon_outer">
+          <div class="social_icon_ctr"><img src={github} alt="" class="social_icon" /></div>
+          <div class="social_icon_ctr"><img src={codepen} alt="" class="social_icon" /></div>
+          <div class="social_icon_ctr"><img src={medium} alt="" class="social_icon" /></div>
+          <div class="social_icon_ctr"><img src={youtube} alt="" class="social_icon" /></div>
+          <div class="social_icon_ctr"><img src={linkedin} alt="" class="social_icon" /></div>
+        </div>
+      </div>
+      <div class="contacts">
+        <div class="contacts_copy">CONTACTS</div>
+        <div class="contacts_desc">
+          <div class="contacts_desc_item">
+            <div class="desc_item_left">EMAIL:</div>
+            <div class="desc_item_right">duminda.g.k@gmail.com</div>
+          </div>
+          <div class="contacts_desc_item">
+            <div class="desc_item_left">PHONE:</div>
+            <div class="desc_item_right">+94765742200</div>
+          </div>
+          <div class="contacts_desc_item">
+            <div class="desc_item_left">ADDRESS:</div>
+            <div class="desc_item_right">296/B, Motemulla, Yogiyana, Sri Lanka</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="contacts">
-      <div class="contacts_copy">CONTACTS</div>
-      <div class="contacts_desc">
-        <div class="contacts_desc_item">
-          <div class="desc_item_left">EMAIL:</div>
-          <div class="desc_item_right">duminda.g.k@gmail.com</div>
+    <div class="footer_right">
+      <div class="connect_copy">LET'S CONNECT</div>
+      <div class="connect_desc">I do digital design, brand design, and art direction. Send Me an Email</div>
+      <form class="email_ctr">
+        <div class="input_group">
+          <label for="email">Email:</label>
+          <input type="text" class="input_email" name="email" placeholder="Enter Your Email Here" />
         </div>
-        <div class="contacts_desc_item">
-          <div class="desc_item_left">PHONE:</div>
-          <div class="desc_item_right">+94765742200</div>
+        <div class="input_group">
+          <label for="message">Message:</label>
+          <textarea name="message" rows="10" cols="30" placeholder="Enter Your Message Here" class="input_textarea" />
         </div>
-        <div class="contacts_desc_item">
-          <div class="desc_item_left">ADDRESS:</div>
-          <div class="desc_item_right">296/B, Motemulla, Yogiyana, Sri Lanka</div>
-        </div>
-      </div>
+        <button on:click={handleClick} type="button" class="email_btn">SUBMIT</button>
+      </form>
     </div>
   </div>
-  <div class="connect">
-    <div class="connect_copy">LET'S CONNECT</div>
-    <div class="connect_desc">I do digital design, brand design, and art direction. Send Me an Email</div>
-    <form class="email_ctr">
-      <div class="input_group">
-        <label for="email">Email:</label>
-        <input type="text" class="input_email" name="email" placeholder="Enter Your Email Here" />
-      </div>
-      <div class="input_group">
-        <label for="message">Message:</label>
-        <textarea name="message" rows="10" cols="30" placeholder="Enter Your Message Here" class="input_textarea" />
-      </div>
-      <button on:click={handleClick} type="button" class="email_btn">SUBMIT</button>
-    </form>
-  </div>
+  <div class="rights">@2023 Duminda Kodagoda. All Rights Reserved.</div>
 </section>
 
 <style>
+  .footer_rounded_div {
+    transform: translateY(-1px);
+    will-change: height;
+    width: 100%;
+    top: 0;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .footer_rounded_div_inner {
+    width: 150%;
+    content: '';
+    display: block;
+    position: absolute;
+    background: #fff;
+    height: 750%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -86.666%);
+    z-index: 1;
+  }
+
   .footer {
     background: #000;
     color: #fff;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 10rem;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .footer_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .footer_inner {
+      padding: 10rem 10rem 2rem;
+      gap: 4rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   }
 
   .footer_left {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    flex-grow: 1;
   }
 
   .social {
@@ -93,6 +159,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .social_icon_ctr {
@@ -133,6 +200,14 @@
 
   .contacts_desc_item {
     display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .contacts_desc_item {
+      flex-direction: row;
+    }
   }
 
   .desc_item_left {
@@ -140,9 +215,10 @@
     font-weight: 600;
   }
 
-  .connect {
+  .footer_right {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
   }
 
   .connect_copy {
@@ -214,5 +290,14 @@
     font-family: 'Teko', sans-serif;
     letter-spacing: 0.025em;
     font-size: 2rem;
+    align-self: center;
+  }
+
+  .rights {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    border-top: 2px solid #444;
+    padding: 2rem;
+    text-align: center;
   }
 </style>
