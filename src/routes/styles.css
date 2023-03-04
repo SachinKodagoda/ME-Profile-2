@@ -177,7 +177,10 @@ body {
   justify-content: space-between;
   position: relative;
   min-height: auto;
-  background: #fff;
+  background-color: #e7cba0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media only screen and (min-width: 768px) {
   .about_section {
@@ -302,6 +305,11 @@ body {
   background-size: cover;
   color: transparent;
 }
+.about_title2 {
+  font-weight: 800;
+  font-size: var(--font3);
+  color: #392660;
+}
 .about_sub_title {
   font-weight: 300;
   font-size: var(--font2);
@@ -319,7 +327,7 @@ body {
 }
 .about_description {
   font-weight: 200;
-  color: #8a8a8a;
+  color: #000;
   font-size: var(--font2);
   line-height: 1.8;
 }
@@ -436,6 +444,52 @@ body {
 .about_svg {
   display: block;
 }
+
+/* 🔥🔥🔥 AboutSection-Corners 🔥🔥🔥 */
+.about_ring {
+  border: 30px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  aspect-ratio: 1/1;
+  transform-origin: center;
+}
+
+.about_ring_left {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-width: 40px;
+  width: 60%;
+  left: 0;
+  top: 10%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  .about_ring_left {
+    border-width: 100px;
+    width: 800px;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.about_ring_right {
+  border-width: 40px;
+  width: 50%;
+  right: 0;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+
+@media only screen and (min-width: 768px) {
+  .about_ring_right {
+    border-width: 80px;
+    width: 600px;
+    transform: translate(50%, 50%);
+  }
+}
+
 /*🔥🔥🔥 -------- SkillSection -------- 🔥🔥🔥*/
 .skill_section {
   display: flex;
@@ -675,6 +729,9 @@ body {
   z-index: 1;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  background: #000;
+  background-size: cover;
+  content: '';
 }
 
 .experience_mask_animate {
@@ -746,7 +803,7 @@ body {
   width: 100%;
   pointer-events: none;
   position: absolute;
-  background-position: cover;
+  background-position: center;
   background-repeat: no-repeat;
   opacity: 0.8;
   left: 0;
@@ -795,15 +852,15 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .footer_inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 1rem;
+  padding: 5rem 1rem 1rem;
   flex-wrap: wrap;
   gap: 2rem;
 }
@@ -981,8 +1038,8 @@ body {
 
 .footer_rights {
   font-size: 1.5rem;
-  margin-top: 2rem;
-  border-top: 2px solid #444;
   padding: 2rem;
   text-align: center;
+  background: #ccc;
+  color: #000;
 }

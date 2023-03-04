@@ -1,4 +1,5 @@
 <script lang="ts">
+  import back from '$lib/images/back6.jpeg';
   import logo from '$lib/images/dk-logo.svg';
   import download from '$lib/images/download.svg';
   import fire from '$lib/images/fire.gif';
@@ -11,7 +12,6 @@
   import leftCorner from '$lib/images/left_corner.svg';
   import hero from '$lib/images/main.jpg';
   import menu from '$lib/images/menu.svg';
-  import name_back from '$lib/images/name_back.jpg';
   import profile from '$lib/images/profile1.jpg';
   import scroll from '$lib/images/scroll.svg';
   import gsap from 'gsap-trial';
@@ -29,7 +29,7 @@
   let skillValue = 0;
   let fTxt: SVGTextElement;
   let experience = 0;
-  let curveValue = 0;
+  let curveValue = 20;
   const maxCurveVh = 20;
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, MotionPathPlugin);
@@ -52,6 +52,40 @@
           onUpdate: (self) => {
             skillValue = self.progress * 1.5;
           }
+        }
+      }
+    );
+    gsap.fromTo(
+      '.about_ring_left',
+      { scale: 1 },
+      {
+        scale: 1.2,
+        ease: 'power4',
+        transformOrigin: 'center center',
+        scrollTrigger: {
+          trigger: '.about_ring_left',
+          start: 'top top',
+          end: 'bottom+=300 top',
+          markers: true,
+          // pin: true,
+          scrub: 0.25
+        }
+      }
+    );
+    gsap.fromTo(
+      '.about_ring_right',
+      { scale: 1 },
+      {
+        scale: 1.2,
+        ease: 'power4',
+        transformOrigin: 'center center',
+        scrollTrigger: {
+          trigger: '.about_ring_right',
+          start: 'top center',
+          end: 'bottom+=300 top',
+          markers: true,
+          // pin: true,
+          scrub: 0.25
         }
       }
     );
@@ -165,7 +199,10 @@
 <section id="smooth-wrapper" class="app" style="--progress: {skillValue}">
   <div id="smooth-content">
     <!-- 🔥🔥🔥 AboutSection 🔥🔥🔥 -->
-    <section class="about_section">
+    <section class="about_section" style={`background-image: url(${back})`}>
+      <!-- 🔥🔥🔥 AboutSection-AboutRing 🔥🔥🔥 -->
+      <div class="about_ring about_ring_right" />
+      <div class="about_ring about_ring_left" />
       <!-- 🔥🔥🔥 AboutSection-Navbar 🔥🔥🔥 -->
       <div class="navbar">
         <div class="logo_img_ctr"><img src={logo} alt="DK" class="logo_img" /></div>
@@ -200,7 +237,8 @@
           <!-- 🔥🔥🔥 AboutSection-AboutMiddle-Middle 🔥🔥🔥 -->
           <section class="about_middle">
             <div class="about_title_ctr">
-              <div class="about_title" style={`background-image: url(${name_back})`}>Duminda Kodagoda</div>
+              <!-- <div class="about_title" style={`background-image: url(${name_back})`}>Duminda Kodagoda</div> -->
+              <div class="about_title2">Duminda Kodagoda</div>
               <div class="about_sub_title_ctr">
                 <div class="about_sub_title_line" />
                 <div class="about_sub_title">Web Developer</div>
@@ -218,6 +256,7 @@
           </div>
         </div>
       </div>
+
       <!-- 🔥🔥🔥 AboutSection-Scroll 🔥🔥🔥 -->
       <div class="scroll_ctr">
         <img src={scroll} alt="scroll" class="scroll_down_mouse" />
