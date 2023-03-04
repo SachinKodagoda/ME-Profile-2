@@ -26,10 +26,10 @@
   function handleClick() {
     alert('clicked');
   }
-  let progressVal = 0;
+  let skillValue = 0;
   let fTxt: SVGTextElement;
   let experience = 0;
-  let curve = 0;
+  let curveValue = 0;
   const maxCurveVh = 20;
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, MotionPathPlugin);
@@ -38,33 +38,33 @@
       effects: true,
       smoothTouch: 0.1
     });
-    const w = document.querySelector('.background_font_inner');
-    const [xFrom, xTo] = ['100%', '-100%'];
+
+    //  🔥🔥🔥 SkillSection 🔥🔥🔥
+    const w = document.querySelector('.skill_background_font_inner');
     gsap.fromTo(
       w,
-      { x: xFrom },
+      { x: '100%' },
       {
-        x: xTo,
+        x: '-100%',
         scrollTrigger: {
-          trigger: '.background_font_inner',
+          trigger: '.skill_background_font_inner',
           scrub: 0.1,
           onUpdate: (self) => {
-            progressVal = self.progress * 1.5;
+            skillValue = self.progress * 1.5;
           }
         }
       }
     );
-
+    //  🔥🔥🔥 ExperienceSection 🔥🔥🔥
     gsap
       .timeline({
         scrollTrigger: {
           trigger: '.experience',
           start: 'top center',
-          // markers: true,
           scrub: 1
         }
       })
-      .fromTo('.cloud1', { y: 0 }, { y: -800 }, 0);
+      .fromTo('.experience_cloud1', { y: 0 }, { y: -800 }, 0);
 
     const offset = fTxt?.getBBox().height * 0.5;
 
@@ -83,11 +83,10 @@
         trigger: '#time_line_id',
         start: 'top center',
         scrub: 1.5,
-        // markers: true,
-        toggleClass: { targets: '.experience_mask_ctr', className: 'mask_animate' }
+        toggleClass: { targets: '.experience_mask_ctr', className: 'experience_mask_animate' }
       }
     });
-    tl.to('.f_text', { fill: 'red', duration: 0.4 });
+    tl.to('.experience_f_text', { fill: 'red', duration: 0.4 });
 
     const pulses = gsap
       .timeline({
@@ -145,14 +144,14 @@
       )
       .add(pulses, 0)
       .add(lines, 0);
-
+    //  🔥🔥🔥 FooterSection 🔥🔥🔥
     ScrollTrigger.create({
       trigger: '.footer_rounded_div',
       scrub: 0.1,
       start: 'top 80%',
       end: 'bottom 20%',
       onUpdate: (self) => {
-        curve = maxCurveVh - self.progress * maxCurveVh;
+        curveValue = maxCurveVh - self.progress * maxCurveVh;
       }
     });
   });
@@ -163,7 +162,7 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section id="smooth-wrapper" class="app" style="--progress: {progressVal}">
+<section id="smooth-wrapper" class="app" style="--progress: {skillValue}">
   <div id="smooth-content">
     <!-- 🔥🔥🔥 AboutSection 🔥🔥🔥 -->
     <section class="about_section">
@@ -233,7 +232,7 @@
       </div>
     </section>
     <!-- 🔥🔥🔥 SkillSection 🔥🔥🔥 -->
-    <div class="skill">
+    <div class="skill_section">
       <div class="skill_inner">
         <div class="skill_background_font">
           <span class="skill_background_font_inner" data-word="FULLSTACK">FULLSTACK</span>
@@ -278,7 +277,7 @@
       </div>
     </div>
     <!-- 🔥🔥🔥 ExperienceSection 🔥🔥🔥 -->
-    <section class="experience">
+    <section class="experience_section">
       <div class="experience_fullstack_engineer_ctr">
         <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" class="experience_svg" preserveAspectRatio="none">
           <defs>
@@ -308,7 +307,9 @@
           </g>
         </svg>
         <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" class="experience_fullstack_engineer_txt">
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="transparent" stroke="#162a43" stroke-width="2" class="f_text" bind:this={fTxt}>FULL STACK ENGINEER</text>
+          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="transparent" stroke="#162a43" stroke-width="2" class="experience_f_text" bind:this={fTxt}
+            >FULL STACK ENGINEER</text
+          >
         </svg>
       </div>
       <section class="experience_hero_section" bind:offsetHeight={experience} id="time_line_id">
@@ -364,10 +365,10 @@
       </section>
     </section>
     <!-- 🔥🔥🔥 FooterSection 🔥🔥🔥 -->
-    <div class="footer_rounded_div" style="height: {curve}vh">
+    <div class="footer_rounded_div" style="height: {curveValue}vh">
       <div class="footer_rounded_div_inner" />
     </div>
-    <section class="footer">
+    <section class="footer_section">
       <div class="footer_inner">
         <div class="footer_left">
           <div class="footer_social">
