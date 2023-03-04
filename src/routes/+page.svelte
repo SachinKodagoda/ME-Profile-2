@@ -8,7 +8,7 @@
   import linkedin from '$lib/images/icon-linkedin.svg';
   import medium from '$lib/images/icon-medium.svg';
   import youtube from '$lib/images/icon-youtube.svg';
-  import inkmask from '$lib/images/inkmask.png';
+  // import inkmask from '$lib/images/inkmask.png';
   import leftCorner from '$lib/images/left_corner.svg';
   import hero from '$lib/images/main.jpg';
   import menu from '$lib/images/menu.svg';
@@ -29,7 +29,7 @@
   let skillValue = 0;
   let fTxt: SVGTextElement;
   let experience = 0;
-  let curveValue = 20;
+  let curveValue = 0;
   const maxCurveVh = 20;
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, MotionPathPlugin);
@@ -38,6 +38,8 @@
       effects: true,
       smoothTouch: 0.1
     });
+
+    const mm = gsap.matchMedia();
 
     //  🔥🔥🔥 SkillSection 🔥🔥🔥
     const w = document.querySelector('.skill_background_font_inner');
@@ -55,47 +57,6 @@
         }
       }
     );
-    // gsap.fromTo(
-    //   '.about_ring_left',
-    //   { scale: 1 },
-    //   {
-    //     scale: 1.2,
-    //     ease: 'power4',
-    //     transformOrigin: 'center center',
-    //     scrollTrigger: {
-    //       trigger: '.about_ring_left',
-    //       start: 'top top',
-    //       end: 'bottom+=300 top',
-    //       scrub: 0.25
-    //     }
-    //   }
-    // );
-    // gsap.fromTo(
-    //   '.about_ring_right',
-    //   { scale: 1 },
-    //   {
-    //     scale: 1.2,
-    //     ease: 'power4',
-    //     transformOrigin: 'center center',
-    //     scrollTrigger: {
-    //       trigger: '.about_ring_right',
-    //       start: 'top center',
-    //       end: 'bottom+=300 top',
-    //       scrub: 0.25
-    //     }
-    //   }
-    // );
-
-    // gsap.to('.about_cross_right', {
-    //   rotate: '+=360',
-    //   transformOrigin: 'center center',
-    //   scrollTrigger: {
-    //     trigger: '.about_ring_left',
-    //     start: 'top top',
-    //     end: 'bottom+=300 top',
-    //     scrub: 0.25
-    //   }
-    // });
 
     //  🔥🔥🔥 ExperienceSection 🔥🔥🔥
     gsap
@@ -120,15 +81,15 @@
       }
     });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#time_line_id',
-        start: 'top center',
-        scrub: 1.5,
-        toggleClass: { targets: '.experience_mask_ctr', className: 'experience_mask_animate' }
-      }
-    });
-    tl.to('.experience_f_text', { fill: 'red', duration: 0.4 });
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '#time_line_id',
+    //     start: 'top center',
+    //     scrub: 1.5,
+    //     toggleClass: { targets: '.experience_mask_ctr', className: 'experience_mask_animate' }
+    //   }
+    // });
+    // tl.to('.experience_f_text', { fill: 'red', duration: 0.4 });
 
     const pulses = gsap
       .timeline({
@@ -187,14 +148,29 @@
       .add(pulses, 0)
       .add(lines, 0);
     //  🔥🔥🔥 FooterSection 🔥🔥🔥
-    ScrollTrigger.create({
-      trigger: '.footer_rounded_div',
-      scrub: 0.1,
-      start: 'top 80%',
-      end: 'bottom 20%',
-      onUpdate: (self) => {
-        curveValue = maxCurveVh - self.progress * maxCurveVh;
-      }
+    mm.add('(max-width: 768px)', () => {
+      curveValue = 0;
+      ScrollTrigger.create({
+        trigger: '.footer_rounded_div',
+        scrub: 0.1,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        onUpdate: (self) => {
+          curveValue = maxCurveVh / 4 - (self.progress * maxCurveVh) / 4;
+        }
+      });
+    });
+    mm.add('(min-width: 769px)', () => {
+      curveValue = maxCurveVh;
+      ScrollTrigger.create({
+        trigger: '.footer_rounded_div',
+        scrub: 0.1,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        onUpdate: (self) => {
+          curveValue = maxCurveVh - self.progress * maxCurveVh;
+        }
+      });
     });
   });
 </script>
@@ -208,56 +184,6 @@
   <div id="smooth-content">
     <!-- 🔥🔥🔥 AboutSection 🔥🔥🔥 -->
     <section class="about_section" style={`background-image: url(${back})`}>
-      <!-- 🔥🔥🔥 AboutSection-AboutRing 🔥🔥🔥 -->
-      <div class="about_ring about_ring_right" />
-      <div class="about_ring about_ring_left">
-        <svg
-          class="about_cross_left"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="12" y1="5" x2="12" y2="19" />
-          <line x1="5" y1="12" x2="19" y2="12" />
-        </svg>
-      </div>
-      <svg
-        class="about_cross_top"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <line x1="12" y1="5" x2="12" y2="19" />
-        <line x1="5" y1="12" x2="19" y2="12" />
-      </svg>
-      <svg
-        class="about_cross_right"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <line x1="12" y1="5" x2="12" y2="19" />
-        <line x1="5" y1="12" x2="19" y2="12" />
-      </svg>
-
       <!-- 🔥🔥🔥 AboutSection-Navbar 🔥🔥🔥 -->
       <div class="navbar">
         <div class="logo_img_ctr"><img src={logo} alt="DK" class="logo_img" /></div>
@@ -329,7 +255,7 @@
     <div class="skill_section">
       <div class="skill_inner">
         <div class="skill_background_font">
-          <span class="skill_background_font_inner" data-word="FULLSTACK">FULLSTACK</span>
+          <span class="skill_background_font_inner" data-word="FULLSTACK">FULLSTACK </span>
         </div>
         <div class="skill_right">
           <div class="skill_right_inner">
@@ -453,7 +379,7 @@
         </div>
         <div class="experience_hero_ctr">
           <img src={hero} alt="hero" class="experience_hero_img" id="experience_hero_img" />
-          <div id="mask" class="experience_mask_ctr" style={`background-image: url(${hero}); -webkit-mask-image: url(${inkmask}); mask-image: url(${inkmask});`} />
+          <!-- <div id="mask" class="experience_mask_ctr" style={`background-image: url(${hero}); -webkit-mask-image: url(${inkmask}); mask-image: url(${inkmask});`} /> -->
           <img src={fire} alt="fire" class="experience_fire" />
         </div>
       </section>

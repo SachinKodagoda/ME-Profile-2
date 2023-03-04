@@ -50,9 +50,13 @@
   --laptop: 1024px;
   --laptop-l: 1440px;
 
-  --l-color1: #ff6d0a;
+  /* --l-color1: #ff6d0a;
   --l-color2: #ffc000;
-  --l-color3: #fff;
+  --l-color3: #ffffff25; */
+
+  --l-color1: #979797d0;
+  --l-color2: #979797;
+  --l-color3: #ffffff25;
 
   --gold: #f1c22d;
   /* FFC000 */
@@ -408,6 +412,7 @@ body {
   animation: fancy_border 12s ease-in-out infinite;
   box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.1);
   outline: 10px solid #000;
+  will-change: border-radius;
 }
 /* 🔥🔥🔥 AboutSection-Scroll 🔥🔥🔥 */
 .scroll_ctr {
@@ -429,6 +434,15 @@ body {
   width: calc(var(--social-icon) / 3);
   height: auto;
 }
+
+.scroll_circleText {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100%;
+}
 /* 🔥🔥🔥 AboutSection-Corners 🔥🔥🔥 */
 .about_svg_left {
   position: absolute;
@@ -443,87 +457,6 @@ body {
 }
 .about_svg {
   display: block;
-}
-
-/* 🔥🔥🔥 AboutSection-Corners 🔥🔥🔥 */
-.about_ring {
-  border: 30px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background-color: transparent;
-  position: absolute;
-  aspect-ratio: 1/1;
-  transform-origin: center center;
-}
-
-.about_ring_left {
-  border-width: 40px;
-  width: 60%;
-  left: 50%;
-  top: 0%;
-  transform: translate(-50%, -50%);
-}
-
-@media only screen and (min-width: 768px) {
-  .about_ring_left {
-    border-width: 80px;
-    width: 50vh;
-    left: 20px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.about_ring_right {
-  border-color: rgba(0, 0, 0, 0.2);
-  border-width: 40px;
-  width: 50%;
-  right: 50%;
-  bottom: 0;
-  transform: translate(50%, 50%);
-}
-
-@media only screen and (min-width: 768px) {
-  .about_ring_right {
-    border-width: 80px;
-    width: 600px;
-    right: 0%;
-    bottom: 0;
-    transform: translate(50%, 50%);
-  }
-}
-
-.about_cross_right {
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 50px;
-  right: 30px;
-  bottom: 30px;
-  transform-origin: center center;
-  opacity: 0.2;
-}
-
-.about_cross_left {
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 50px;
-  top: 50%;
-  left: 50%;
-  transform-origin: center center;
-  transform: translate(-50%, -50%);
-  opacity: 0.2;
-}
-
-.about_cross_top {
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 50px;
-  right: 5px;
-  top: 100px;
-  transform-origin: center center;
-  opacity: 0.2;
 }
 
 /*🔥🔥🔥 -------- SkillSection -------- 🔥🔥🔥*/
@@ -592,6 +525,7 @@ body {
   position: relative;
   line-height: 1em;
   height: 1em;
+  will-change: transform;
 }
 
 .skill_background_font_inner::before {
@@ -689,10 +623,15 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: 2;
+  will-change: transform;
 }
 .experience_svg {
   width: 100%;
   display: block;
+}
+
+.experience_cloud1 {
+  will-change: transform;
 }
 
 .experience_hero_section {
@@ -851,13 +790,6 @@ body {
   background: #fff;
   height: 2rem;
   content: '';
-  display: none;
-}
-
-@media only screen and (min-width: 768px) {
-  .extra_padding {
-    display: block;
-  }
 }
 
 .footer_rounded_div {
@@ -888,7 +820,7 @@ body {
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   min-height: 100vh;
 }
 
@@ -903,7 +835,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .footer_inner {
-    padding: 10rem 10rem 2rem;
+    padding: 10rem 10rem 10rem;
     gap: 4rem;
     justify-content: space-between;
     align-items: flex-start;
@@ -1076,6 +1008,11 @@ body {
   font-size: 1.5rem;
   padding: 2rem;
   text-align: center;
-  background: #ccc;
-  color: #000;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffff;
+  margin-bottom: 10px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
