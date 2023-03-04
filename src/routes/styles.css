@@ -754,13 +754,26 @@ body {
 }
 
 /* 🔥🔥🔥 FooterSection 🔥🔥🔥 */
+.extra_padding {
+  background: #fff;
+  height: 2rem;
+  content: '';
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .extra_padding {
+    display: block;
+  }
+}
+
 .footer_rounded_div {
   transform: translateY(-1px);
   will-change: height;
   width: 100%;
   top: 0;
   position: relative;
-  height: 0;
+  height: 20vh;
   overflow: hidden;
 }
 
@@ -790,7 +803,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 5rem 1rem;
   flex-wrap: wrap;
   gap: 2rem;
 }

@@ -59,7 +59,7 @@
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: '.experience',
+          trigger: '.experience_section',
           start: 'top center',
           scrub: 1
         }
@@ -365,6 +365,7 @@
       </section>
     </section>
     <!-- 🔥🔥🔥 FooterSection 🔥🔥🔥 -->
+    <div class="extra_padding" />
     <div class="footer_rounded_div" style="height: {curveValue}vh">
       <div class="footer_rounded_div_inner" />
     </div>
