@@ -52,11 +52,11 @@
 
   /* --l-color1: #ff6d0a;
   --l-color2: #ffc000;
-  --l-color3: #ffffff25; */
+  --l-color3: #fff; */
 
-  --l-color1: #979797d0;
-  --l-color2: #979797;
-  --l-color3: #ffffff25;
+  --l-color1: #4b0000;
+  --l-color2: #4b0000;
+  --l-color3: #4b0000;
 
   --gold: #f1c22d;
   /* FFC000 */
@@ -521,13 +521,14 @@ body {
   display: inline-block;
   font-size: 100vmin;
   vertical-align: bottom;
-  color: transparent;
+  color: #ccc;
   position: relative;
   line-height: 1em;
   height: 1em;
   will-change: transform;
+  /* -webkit-text-stroke: 10px #9b9b9b; */
 }
-
+/*
 .skill_background_font_inner::before {
   content: attr(data-word);
   position: absolute;
@@ -540,7 +541,7 @@ body {
   background-image: linear-gradient(to top, var(--l-color1) 0%, var(--l-color2) calc(var(--progress) * 100%) calc(var(--progress) * 100%), var(--l-color3) calc(var(--progress) * 100%) 100%);
   background-size: cover;
   background-repeat: no-repeat;
-}
+} */
 
 .skill_right {
   border: 8px solid #111;
@@ -614,6 +615,13 @@ body {
 
 .experience_fullstack_engineer_ctr {
   position: relative;
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .experience_fullstack_engineer_ctr {
+    margin-top: 0;
+  }
 }
 
 .experience_fullstack_engineer_txt {
@@ -628,6 +636,7 @@ body {
 .experience_svg {
   width: 100%;
   display: block;
+  font-size: 4rem;
 }
 
 .experience_cloud1 {
@@ -655,7 +664,7 @@ body {
   background: #fff;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .experience_hero_section {
     flex-direction: row;
   }
@@ -666,7 +675,7 @@ body {
   width: calc(100vw - 32px);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .experience_time_line {
     width: calc(50vw - 40px);
   }

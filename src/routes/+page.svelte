@@ -50,7 +50,7 @@
         x: '-100%',
         scrollTrigger: {
           trigger: '.skill_background_font_inner',
-          scrub: 0.1,
+          scrub: true,
           onUpdate: (self) => {
             skillValue = self.progress * 1.5;
           }
@@ -64,33 +64,10 @@
         scrollTrigger: {
           trigger: '.experience_section',
           start: 'top center',
-          scrub: 1
+          scrub: true
         }
       })
       .fromTo('.experience_cloud1', { y: 0 }, { y: -800 }, 0);
-
-    const offset = fTxt?.getBBox().height * 0.5;
-
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: '.experience_fullstack_engineer_txt',
-        start: `center-=${offset} top`,
-        pin: true,
-        end: 'bottom 25%',
-        scrub: 1.5
-      }
-    });
-
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '#time_line_id',
-    //     start: 'top center',
-    //     scrub: 1.5,
-    //     toggleClass: { targets: '.experience_mask_ctr', className: 'experience_mask_animate' }
-    //   }
-    // });
-    // tl.to('.experience_f_text', { fill: 'red', duration: 0.4 });
-
     const pulses = gsap
       .timeline({
         defaults: {
@@ -152,9 +129,9 @@
       curveValue = 0;
       ScrollTrigger.create({
         trigger: '.footer_rounded_div',
-        scrub: 0.1,
+        scrub: true,
         start: 'top 80%',
-        end: 'bottom 20%',
+        end: 'bottom 50%',
         onUpdate: (self) => {
           curveValue = maxCurveVh / 4 - (self.progress * maxCurveVh) / 4;
         }
@@ -164,9 +141,10 @@
       curveValue = maxCurveVh;
       ScrollTrigger.create({
         trigger: '.footer_rounded_div',
-        scrub: 0.1,
-        start: 'top 80%',
-        end: 'bottom 20%',
+        scrub: true,
+        start: 'top bottom',
+        end: 'top 40%',
+        markers: true,
         onUpdate: (self) => {
           curveValue = maxCurveVh - self.progress * maxCurveVh;
         }
@@ -255,7 +233,7 @@
     <div class="skill_section">
       <div class="skill_inner">
         <div class="skill_background_font">
-          <span class="skill_background_font_inner" data-word="FULLSTACK">FULLSTACK </span>
+          <span class="skill_background_font_inner" data-word="FULLSTACK">FULLSTACK</span>
         </div>
         <div class="skill_right">
           <div class="skill_right_inner">
@@ -299,7 +277,7 @@
     <!-- 🔥🔥🔥 ExperienceSection 🔥🔥🔥 -->
     <section class="experience_section">
       <div class="experience_fullstack_engineer_ctr">
-        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" class="experience_svg" preserveAspectRatio="none">
+        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" class="experience_svg" preserveAspectRatio="none">
           <defs>
             <linearGradient id="rainbow" x1="0" x2="0" y1="0" y2="100%" gradientUnits="userSpaceOnUse">
               <stop stop-color="#FF5B99" offset="0%" />
@@ -317,19 +295,14 @@
             </g>
           </mask>
           <text fill="url(#rainbow)">
-            <tspan x="50%" y="10%" dominant-baseline="middle" text-anchor="middle"> I'M AN </tspan>
-            <tspan x="50%" y="30%" dominant-baseline="middle" text-anchor="middle"> EXPERIENCED </tspan>
+            <tspan x="50%" y="5%" dominant-baseline="middle" text-anchor="middle"> I'M AN </tspan>
+            <tspan x="50%" y="15%" dominant-baseline="middle" text-anchor="middle"> EXPERIENCED </tspan>
           </text>
-          <text fill="#fff" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">FULL STACK ENGINEER</text>
+          <text fill="#fff" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">FULL STACK ENGINEER</text>
           <g mask="url(#m)">
             <rect fill="#fff" width="100%" height="100%" />
-            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#000" class="experience_f_text_back">FULL STACK ENGINEER</text>
+            <text x="50%" y="25%" dominant-baseline="middle" text-anchor="middle" fill="#000" class="experience_f_text_back">FULL STACK ENGINEER</text>
           </g>
-        </svg>
-        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" class="experience_fullstack_engineer_txt">
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="transparent" stroke="#162a43" stroke-width="2" class="experience_f_text" bind:this={fTxt}
-            >FULL STACK ENGINEER</text
-          >
         </svg>
       </div>
       <section class="experience_hero_section" bind:offsetHeight={experience} id="time_line_id">
