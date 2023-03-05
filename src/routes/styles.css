@@ -609,42 +609,12 @@ body {
 
 .experience_section_top {
   color: #fff;
-  font-size: 2rem;
   font-weight: 900;
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-.experience_section_top_title3 {
-  font-size: 6rem;
-}
-
-@media only screen and (min-width: 425px) {
-  .experience_section_top {
-    font-size: 3rem;
-  }
-  .experience_section_top_title3 {
-    font-size: 4rem;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .experience_section_top {
-    font-size: 6rem;
-  }
-  .experience_section_top_title3 {
-    font-size: 5rem;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .experience_section_top {
-    font-size: 9rem;
-  }
-  .experience_section_top_title3 {
-    font-size: 6.5rem;
-  }
+  padding: 0 8px;
 }
 
 .experience_section_top_title1 {
@@ -655,6 +625,7 @@ body {
   background-clip: text;
   background-size: cover;
   background-repeat: no-repeat;
+  font-size: 3.5rem;
 }
 
 .experience_section_top_title2 {
@@ -665,6 +636,47 @@ body {
   background-clip: text;
   background-size: cover;
   background-repeat: no-repeat;
+  font-size: 2.5rem;
+}
+
+.experience_section_top_title3 {
+  font-size: 3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .experience_section_top_title1 {
+    font-size: 5rem;
+  }
+  .experience_section_top_title2 {
+    font-size: 4rem;
+  }
+  .experience_section_top_title3 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .experience_section_top_title1 {
+    font-size: 6rem;
+  }
+  .experience_section_top_title2 {
+    font-size: 5rem;
+  }
+  .experience_section_top_title3 {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .experience_section_top_title1 {
+    font-size: 9rem;
+  }
+  .experience_section_top_title2 {
+    font-size: 8rem;
+  }
+  .experience_section_top_title3 {
+    font-size: 7rem;
+  }
 }
 
 .experience_section {
@@ -695,10 +707,6 @@ body {
   width: 100%;
   display: block;
   font-size: 4rem;
-}
-
-.experience_cloud1 {
-  will-change: transform;
 }
 
 .experience_hero_section {

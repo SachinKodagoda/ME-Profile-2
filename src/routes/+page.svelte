@@ -77,14 +77,42 @@
 
     //  🔥🔥🔥 ExperienceSection 🔥🔥🔥
 
-    ScrollTrigger.create({
-      trigger: '.experience_section_top',
-      scrub: true,
-      markers: true,
-      pin: true,
-      start: 'top 20%',
-      end: 'bottom top'
-    });
+    // gsap
+    //   .timeline({
+    //     defaults: { duration: 1, autoAlpha: 1 },
+    //     scrollTrigger: {
+    //       trigger: '.experience_fullstack_engineer_ctr',
+    //       scrub: true,
+    //       start: 'top bottom',
+    //       end: 'bottom top'
+    //     }
+    //   })
+    //   .add('start')
+    //   // .to('.experience_section_top', { duration: 1, autoAlpha: 0 }, 'start')
+    //   .to('.experience_fullstack_engineer_ctr', { scale: 1.5 }, 'start');
+
+    // ScrollTrigger.create({
+    //   trigger: '.experience_section_top',
+    //   scrub: true,
+    //   markers: true,
+    //   pin: true,
+    //   start: 'top top',
+    //   end: 'bottom top'
+    // });
+
+    gsap
+      .timeline({
+        defaults: { duration: 1, autoAlpha: 1 },
+        scrollTrigger: {
+          trigger: '.experience_section_top',
+          scrub: true,
+          markers: true,
+          pin: true,
+          start: 'top top',
+          end: 'bottom top'
+        }
+      })
+      .to('.experience_section_top', { duration: 0.01, autoAlpha: 0.1 });
 
     const pulses = gsap
       .timeline({
