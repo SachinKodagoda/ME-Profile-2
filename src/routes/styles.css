@@ -3,7 +3,7 @@
   --body-color: #000;
   font-family: var(--font-body);
   color: var(--color-text);
-  --progress: 0;
+  --pin-value: 0;
   --s0: 1px;
   --s1: 2px;
   --s2: 4px;
@@ -653,6 +653,7 @@ body {
   position: relative;
   isolation: isolate;
 }
+
 .experience_hero_section::before {
   content: '';
   position: absolute;
@@ -1024,4 +1025,75 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* 🔥🔥🔥 PinSection 🔥🔥🔥 */
+
+.white_hider {
+  height: 5px;
+  position: relative;
+  isolation: isolate;
+}
+
+.white_hider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -5px;
+  width: 100%;
+  height: calc(100% + 10px);
+  z-index: -1;
+  background: #fff;
+}
+
+.pin_section {
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  padding: 0rem 0 6rem;
+}
+
+.pin_content {
+  display: flex;
+  will-change: transform;
+}
+
+/* .pin_content_1 {
+  transform: translateX(calc(var(--pin-value) * -1%));
+}
+.pin_content_2 {
+  transform: translateX(calc(var(--pin-value) * 1% - 20%));
+} */
+
+.pin_box {
+  width: 60vw;
+  height: auto;
+  flex: none;
+  padding: 0.1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .pin_box {
+    width: 35vw;
+    padding: 0.5rem;
+  }
+}
+
+.pin_box_inner {
+  width: 100%;
+  height: 100%;
+}
+
+.pin_image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pin_video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

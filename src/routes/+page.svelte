@@ -14,6 +14,14 @@
   import menu from '$lib/images/menu.svg';
   import profile from '$lib/images/profile1.jpg';
   import scroll from '$lib/images/scroll.svg';
+  import v1 from '$lib/images/v1.jpg';
+  import v2 from '$lib/images/v2.jpg';
+  import v3 from '$lib/images/v3.jpg';
+  import v4 from '$lib/images/v4.jpg';
+  import video1 from '$lib/images/video1.mp4';
+  import video2 from '$lib/images/video2.mp4';
+  import video3 from '$lib/images/video3.mp4';
+  import video4 from '$lib/images/video4.mp4';
   import gsap from 'gsap-trial';
   import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin';
   import MotionPathPlugin from 'gsap-trial/MotionPathPlugin';
@@ -22,7 +30,6 @@
   import { onMount } from 'svelte';
   import './normalize.css';
   import './styles.css';
-
   function handleClick() {
     alert('clicked');
   }
@@ -30,6 +37,7 @@
   let fTxt: SVGTextElement;
   let experience = 0;
   let curveValue = 0;
+  let pinValue = 0;
   const maxCurveVh = 20;
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, MotionPathPlugin);
@@ -40,14 +48,11 @@
     });
 
     const mm = gsap.matchMedia();
-
-    //  🔥🔥🔥 SkillSection 🔥🔥🔥
-    const w = document.querySelector('.skill_background_font_inner');
     gsap.fromTo(
-      w,
-      { x: '100%' },
+      '.skill_background_font_inner',
+      { xPercent: 100 },
       {
-        x: '-100%',
+        xPercent: -100,
         scrollTrigger: {
           trigger: '.skill_background_font_inner',
           scrub: true,
@@ -57,6 +62,16 @@
         }
       }
     );
+    // ScrollTrigger.create({
+    //   trigger: '.skill_background_font_inner',
+    //   scrub: true,
+    //   start: 'top bottom',
+    //   end: 'bottom top',
+    //   markers: true,
+    //   onUpdate: (self) => {
+    //     skillValue = self.progress * 1.5;
+    //   }
+    // });
 
     //  🔥🔥🔥 ExperienceSection 🔥🔥🔥
     gsap
@@ -144,12 +159,38 @@
         scrub: true,
         start: 'top bottom',
         end: 'top 40%',
-        markers: true,
         onUpdate: (self) => {
           curveValue = maxCurveVh - self.progress * maxCurveVh;
         }
       });
     });
+
+    gsap.fromTo(
+      '.pin_content_1',
+      { xPercent: 0 },
+      {
+        xPercent: -33,
+        scrollTrigger: {
+          trigger: '.pin_content_1',
+          scrub: true,
+          start: 'top bottom',
+          end: 'bottom top'
+        }
+      }
+    );
+    gsap.fromTo(
+      '.pin_content_2',
+      { xPercent: -33 },
+      {
+        xPercent: 0,
+        scrollTrigger: {
+          trigger: '.pin_content_2',
+          scrub: true,
+          start: 'top bottom',
+          end: 'bottom top'
+        }
+      }
+    );
   });
 </script>
 
@@ -158,7 +199,7 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section id="smooth-wrapper" class="app" style="--progress: {skillValue}">
+<section id="smooth-wrapper" class="app">
   <div id="smooth-content">
     <!-- 🔥🔥🔥 AboutSection 🔥🔥🔥 -->
     <section class="about_section" style={`background-image: url(${back})`}>
@@ -305,6 +346,39 @@
           </g>
         </svg>
       </div>
+      <!-- 🔥🔥🔥 PinSection 🔥🔥🔥 -->
+      <div class="white_hider" />
+      <section class="pin_section" style="--pin-value: {pinValue}">
+        <div class="pin_content pin_content_1">
+          <div class="pin_box">
+            <div class="pin_box_inner"><img class="pin_image" src={v1} alt="img" /></div>
+          </div>
+          <div class="pin_box">
+            <div class="pin_box_inner"><video class="pin_video" src={video1} loop muted autoplay /></div>
+          </div>
+          <div class="pin_box">
+            <div class="pin_box_inner"><img class="pin_image" src={v2} alt="img" /></div>
+          </div>
+          <div class="pin_box">
+            <div class="pin_box_inner"><video class="pin_video" src={video2} loop muted autoplay /></div>
+          </div>
+        </div>
+
+        <div class="pin_content pin_content_2">
+          <div class="pin_box">
+            <div class="pin_box_inner"><img class="pin_image" src={v4} alt="img" /></div>
+          </div>
+          <div class="pin_box">
+            <div class="pin_box_inner"><video class="pin_video" src={video4} loop muted autoplay /></div>
+          </div>
+          <div class="pin_box">
+            <div class="pin_box_inner"><img class="pin_image" src={v3} alt="img" /></div>
+          </div>
+          <div class="pin_box">
+            <div class="pin_box_inner"><video class="pin_video" src={video3} loop muted autoplay /></div>
+          </div>
+        </div>
+      </section>
       <section class="experience_hero_section" bind:offsetHeight={experience} id="time_line_id">
         <div class="experience_time_line">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="experience_time_line_svg" preserveAspectRatio="none">
