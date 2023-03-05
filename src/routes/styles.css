@@ -555,8 +555,11 @@ body {
   justify-content: center;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   position: relative;
-  background: #fff;
   padding: 16px;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .skill_right_inner {
@@ -603,25 +606,80 @@ body {
 }
 
 /*🔥🔥🔥 -------- ExperienceSection -------- 🔥🔥🔥*/
+
+.experience_section_top {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.experience_section_top_title3 {
+  font-size: 6rem;
+}
+
+@media only screen and (min-width: 425px) {
+  .experience_section_top {
+    font-size: 3rem;
+  }
+  .experience_section_top_title3 {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .experience_section_top {
+    font-size: 6rem;
+  }
+  .experience_section_top_title3 {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .experience_section_top {
+    font-size: 9rem;
+  }
+  .experience_section_top_title3 {
+    font-size: 6.5rem;
+  }
+}
+
+.experience_section_top_title1 {
+  background-image: linear-gradient(to top, #e21143, #ffb03a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-clip: text;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.experience_section_top_title2 {
+  background-image: linear-gradient(to top, #ff7b21, #eafc37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-clip: text;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .experience_section {
   height: max-content;
   width: 100%;
-  background: #000;
   font-size: 99px;
   font-weight: 900;
   text-align: center;
   position: relative;
 }
 
-.experience_fullstack_engineer_ctr {
-  position: relative;
-  margin-top: 2rem;
-}
-
-@media only screen and (min-width: 1024px) {
-  .experience_fullstack_engineer_ctr {
-    margin-top: 0;
-  }
+.experience_cloud {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .experience_fullstack_engineer_txt {
@@ -1070,6 +1128,7 @@ body {
   height: auto;
   flex: none;
   padding: 0.1rem;
+  cursor: default;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1084,16 +1143,12 @@ body {
   height: 100%;
 }
 
-.pin_image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
+.pin_image,
 .pin_video {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border: 3px solid #111;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
 }

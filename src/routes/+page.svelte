@@ -1,5 +1,7 @@
 <script lang="ts">
+  import back2 from '$lib/images/back5.jpg';
   import back from '$lib/images/back6.jpeg';
+  import cloud from '$lib/images/cloud6.png';
   import logo from '$lib/images/dk-logo.svg';
   import download from '$lib/images/download.svg';
   import fire from '$lib/images/fire.gif';
@@ -74,15 +76,16 @@
     // });
 
     //  🔥🔥🔥 ExperienceSection 🔥🔥🔥
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: '.experience_section',
-          start: 'top center',
-          scrub: true
-        }
-      })
-      .fromTo('.experience_cloud1', { y: 0 }, { y: -800 }, 0);
+
+    ScrollTrigger.create({
+      trigger: '.experience_section_top',
+      scrub: true,
+      markers: true,
+      pin: true,
+      start: 'top 20%',
+      end: 'bottom top'
+    });
+
     const pulses = gsap
       .timeline({
         defaults: {
@@ -276,7 +279,7 @@
         <div class="skill_background_font">
           <span class="skill_background_font_inner" data-word="FULLSTACK">FULLSTACK</span>
         </div>
-        <div class="skill_right">
+        <div class="skill_right" style={`background-image: url(${back2})`}>
           <div class="skill_right_inner">
             <div>
               <span data-word="Html,">Html,</span>
@@ -316,35 +319,14 @@
       </div>
     </div>
     <!-- 🔥🔥🔥 ExperienceSection 🔥🔥🔥 -->
+    <section class="experience_section_top">
+      <div class="experience_section_top_title1">I'M AN</div>
+      <div class="experience_section_top_title2">EXPERIENCED</div>
+      <div class="experience_section_top_title3">FULL STACK ENGINEER</div>
+    </section>
     <section class="experience_section">
       <div class="experience_fullstack_engineer_ctr">
-        <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" class="experience_svg" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="rainbow" x1="0" x2="0" y1="0" y2="100%" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#FF5B99" offset="0%" />
-              <stop stop-color="#FF5447" offset="5%" />
-              <stop stop-color="#FF7B21" offset="10%" />
-              <stop stop-color="#EAFC37" offset="30%" />
-              <stop stop-color="#4FCB6B" offset="40%" />
-              <stop stop-color="#51F7FE" offset="50%" />
-            </linearGradient>
-          </defs>
-          <mask id="m">
-            <g class="experience_cloud1">
-              <rect fill="#fff" width="100%" height="801" y="799" />
-              <image xlink:href="https://assets.codepen.io/721952/cloud1Mask.jpg" width="1200" height="800" />
-            </g>
-          </mask>
-          <text fill="url(#rainbow)">
-            <tspan x="50%" y="5%" dominant-baseline="middle" text-anchor="middle"> I'M AN </tspan>
-            <tspan x="50%" y="15%" dominant-baseline="middle" text-anchor="middle"> EXPERIENCED </tspan>
-          </text>
-          <text fill="#fff" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">FULL STACK ENGINEER</text>
-          <g mask="url(#m)">
-            <rect fill="#fff" width="100%" height="100%" />
-            <text x="50%" y="25%" dominant-baseline="middle" text-anchor="middle" fill="#000" class="experience_f_text_back">FULL STACK ENGINEER</text>
-          </g>
-        </svg>
+        <img src={cloud} alt="cloud" class="experience_cloud" />
       </div>
       <!-- 🔥🔥🔥 PinSection 🔥🔥🔥 -->
       <div class="white_hider" />
