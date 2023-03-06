@@ -12,6 +12,18 @@
   import medium from '$lib/images/icon-medium.svg';
   import youtube from '$lib/images/icon-youtube.svg';
   import leftCorner from '$lib/images/left_corner.svg';
+  import logo_angular from '$lib/images/logo-angular.svg';
+  import logo_css from '$lib/images/logo-css.svg';
+  import logo_html from '$lib/images/logo-html.svg';
+  import logo_java from '$lib/images/logo-java.svg';
+  import logo_javascript from '$lib/images/logo-javascript.svg';
+  import logo_next from '$lib/images/logo-next.svg';
+  import logo_php from '$lib/images/logo-php.svg';
+  import logo_python from '$lib/images/logo-python.svg';
+  import logo_react from '$lib/images/logo-react.svg';
+  import logo_svelte from '$lib/images/logo-svelte.svg';
+  import logo_ux from '$lib/images/logo-ux.svg';
+  import logo_vue from '$lib/images/logo-vue.svg';
   import hero from '$lib/images/main.jpg';
   import menu from '$lib/images/menu.svg';
   import profile from '$lib/images/profile1.jpg';
@@ -274,13 +286,11 @@
         </div>
         <div class="skill_left" style={`background-image: url(${back2})`}>
           <div class="skill_left_inner">
-            <div>
-              <span>Html,</span>
-              <span>CSS,</span>
-              <span>JS,</span>
-              <span>React,</span>
-              <span class="skill_word skill_word_special">
-                Next.js,
+            <!-- Item -->
+            <div class="skill_title">
+              <img src={logo_next} alt="react" class="skill_icon" />
+              <div class="skill_word">
+                NEXT.js
                 <svg width="50" height="5" viewBox="0 0 50 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="skill_wave">
                   <path
                     d="M1 2C2.5 1.55556 5.2 1 8 1C11.5 1 13.5 3 16 3C18.5 3 21 1 23.5 1C26 1 26.5 3 33 3C39.5 3 37.5 2 41.5 1.33333C45 0.75 47.6667 1.55556 49.5 2"
@@ -289,15 +299,42 @@
                     class="skill_wave_path"
                   />
                 </svg>
-              </span>
-              <span>MySQL,</span>
-              <span>Firebase,</span>
-              <span>Node,</span>
-              <span>Python,</span>
-              <span>PHP,</span>
-              <span>Git</span>
-              <span>etc.</span>
+              </div>
             </div>
+            <div class="skill_bar"><div class="skill_green" style="width: 90%" /></div>
+            <!-- Item -->
+            <div class="skill_title">
+              <img src={logo_react} alt="react" class="skill_icon" />
+              <div class="skill_word">REACT</div>
+            </div>
+            <div class="skill_bar"><div class="skill_green" style="width: 90%" /></div>
+            <!-- Item -->
+            <div class="skill_title">
+              <img src={logo_ux} alt="react" class="skill_icon" />
+              <div class="skill_word">UI/UX</div>
+            </div>
+            <div class="skill_bar"><div class="skill_green" style="width: 90%" /></div>
+            <!-- Item -->
+            <div class="skill_title">
+              <img src={logo_css} alt="react" class="skill_icon" />
+              <img src={logo_html} alt="react" class="skill_icon" />
+              <img src={logo_javascript} alt="react" class="skill_icon" />
+            </div>
+            <div class="skill_bar"><div class="skill_green" style="width: 90%" /></div>
+            <!-- Item -->
+            <div class="skill_title">
+              <img src={logo_angular} alt="react" class="skill_icon" />
+              <img src={logo_svelte} alt="react" class="skill_icon" />
+              <img src={logo_vue} alt="react" class="skill_icon" />
+            </div>
+            <div class="skill_bar"><div class="skill_green" style="width: 80%" /></div>
+            <!-- Item -->
+            <div class="skill_title">
+              <img src={logo_php} alt="react" class="skill_icon" />
+              <img src={logo_java} alt="react" class="skill_icon" />
+              <img src={logo_python} alt="react" class="skill_icon" />
+            </div>
+            <div class="skill_bar"><div class="skill_green" style="width: 80%" /></div>
           </div>
         </div>
         <div class="skill_right" style={`background-image: url(${back2})`}>
