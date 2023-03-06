@@ -286,10 +286,24 @@
         </div>
         <div class="skill_left" style={`background-image: url(${back2})`}>
           <div class="skill_left_inner">
-            <!-- Item -->
-            <div class="skill_title">
-              <img src={logo_next} alt="react" class="skill_icon" />
-              <div class="skill_word">
+            <img src={logo_html} alt="react" class="skill_icon s_item1" />
+            <img src={logo_css} alt="react" class="skill_icon s_item2" />
+            <img src={logo_javascript} alt="react" class="skill_icon s_item3" />
+            <img src={logo_react} alt="react" class="skill_icon s_item4" />
+            <img src={logo_angular} alt="react" class="skill_icon s_item5" />
+            <img src={logo_vue} alt="react" class="skill_icon s_item6" />
+            <img src={logo_svelte} alt="react" class="skill_icon s_item7" />
+
+            <img src={logo_next} alt="react" class="skill_icon s_item8" />
+
+            <img src={logo_ux} alt="react" class="skill_icon s_item9" />
+
+            <img src={logo_php} alt="react" class="skill_icon s_item10" />
+            <img src={logo_java} alt="react" class="skill_icon s_item11" />
+            <img src={logo_python} alt="react" class="skill_icon s_item12" />
+            <div class="skill_word s_item13">
+              <span>SPECIALIZED IN UX/UI &</span>
+              <span class="skill_word_inner">
                 NEXT.js
                 <svg width="50" height="5" viewBox="0 0 50 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="skill_wave">
                   <path
@@ -299,50 +313,16 @@
                     class="skill_wave_path"
                   />
                 </svg>
-              </div>
+              </span>
             </div>
-            <div class="skill_bar"><div class="skill_green" style="width: 90%" /></div>
-            <!-- Item -->
-            <div class="skill_title">
-              <img src={logo_react} alt="react" class="skill_icon" />
-              <div class="skill_word">REACT</div>
-            </div>
-            <div class="skill_bar"><div class="skill_green" style="width: 90%" /></div>
-            <!-- Item -->
-            <div class="skill_title">
-              <img src={logo_ux} alt="react" class="skill_icon" />
-              <div class="skill_word">UI/UX</div>
-            </div>
-            <div class="skill_bar"><div class="skill_green" style="width: 90%" /></div>
-            <!-- Item -->
-            <div class="skill_title">
-              <img src={logo_css} alt="react" class="skill_icon" />
-              <img src={logo_html} alt="react" class="skill_icon" />
-              <img src={logo_javascript} alt="react" class="skill_icon" />
-            </div>
-            <div class="skill_bar"><div class="skill_green" style="width: 90%" /></div>
-            <!-- Item -->
-            <div class="skill_title">
-              <img src={logo_angular} alt="react" class="skill_icon" />
-              <img src={logo_svelte} alt="react" class="skill_icon" />
-              <img src={logo_vue} alt="react" class="skill_icon" />
-            </div>
-            <div class="skill_bar"><div class="skill_green" style="width: 80%" /></div>
-            <!-- Item -->
-            <div class="skill_title">
-              <img src={logo_php} alt="react" class="skill_icon" />
-              <img src={logo_java} alt="react" class="skill_icon" />
-              <img src={logo_python} alt="react" class="skill_icon" />
-            </div>
-            <div class="skill_bar"><div class="skill_green" style="width: 80%" /></div>
           </div>
         </div>
         <div class="skill_right" style={`background-image: url(${back2})`}>
           <div class="skill_right_video">
-            <video class="skill_video" src={ai} loop muted autoplay />
+            <video class="skill_right_video" src={ai} loop muted autoplay />
           </div>
-          <div class="skill_other">AI & Machine Learning</div>
-          <div class="skill_interested">INTERESTED IN</div>
+          <div class="skill_right_other">AI & Machine Learning</div>
+          <div class="skill_right_interested">INTERESTED IN</div>
         </div>
       </div>
     </div>
