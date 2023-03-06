@@ -69,7 +69,6 @@
         scrollTrigger: {
           trigger: '.experience_section_top',
           scrub: true,
-          markers: true,
           pin: true,
           start: 'top top',
           end: 'bottom top'
@@ -273,17 +272,15 @@
         <div class="skill_background_font">
           <span class="skill_background_font_inner" data-word="FULLSTACK">FULLSTACK</span>
         </div>
-        <div class="skill_right" style={`background-image: url(${back2})`}>
-          <div class="skill_right_inner">
+        <div class="skill_left" style={`background-image: url(${back2})`}>
+          <div class="skill_left_inner">
             <div>
-              <span data-word="Html,">Html,</span>
-              <span data-word="CSS,">CSS,</span>
-              <span data-word="JS">JS</span>
-            </div>
-            <div>
-              <span data-word="React,">React,</span>
-              <span class="skill_word skill_word_special" data-word="Next.js">
-                Next.js
+              <span>Html,</span>
+              <span>CSS,</span>
+              <span>JS,</span>
+              <span>React,</span>
+              <span class="skill_word skill_word_special">
+                Next.js,
                 <svg width="50" height="5" viewBox="0 0 50 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="skill_wave">
                   <path
                     d="M1 2C2.5 1.55556 5.2 1 8 1C11.5 1 13.5 3 16 3C18.5 3 21 1 23.5 1C26 1 26.5 3 33 3C39.5 3 37.5 2 41.5 1.33333C45 0.75 47.6667 1.55556 49.5 2"
@@ -293,24 +290,18 @@
                   />
                 </svg>
               </span>
-            </div>
-            <div>
-              <span data-word="MySQL,">MySQL,</span>
-              <span data-word="Firebase,">Firebase</span>
-            </div>
-            <div>
-              <span data-word="Node,">Node,</span>
-              <span data-word="Python,">Python,</span>
-              <span data-word="PHP">PHP</span>
-            </div>
-            <div>
-              <span data-word="Git">Git</span>
-              <span data-word="etc.">etc.</span>
+              <span>MySQL,</span>
+              <span>Firebase,</span>
+              <span>Node,</span>
+              <span>Python,</span>
+              <span>PHP,</span>
+              <span>Git</span>
+              <span>etc.</span>
             </div>
           </div>
         </div>
-        <div class="skill_left" style={`background-image: url(${back2})`}>
-          <div class="skill_left_video">
+        <div class="skill_right" style={`background-image: url(${back2})`}>
+          <div class="skill_right_video">
             <video class="skill_video" src={ai} loop muted autoplay />
           </div>
           <div class="skill_other">AI & Machine Learning</div>
