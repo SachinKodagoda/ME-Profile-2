@@ -593,7 +593,7 @@ body {
 .skill_word {
   position: relative;
   color: transparent;
-  color: #8a0303;
+  color: #000;
   font-weight: var(--font-black);
   display: flex;
   align-items: center;
