@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ai from '$lib/images/ai2.mp4';
   import back2 from '$lib/images/back5.jpg';
   import back from '$lib/images/back6.jpeg';
   import cloud from '$lib/images/cloud6.png';
@@ -308,7 +309,13 @@
             </div>
           </div>
         </div>
-        <div class="skill_left" style={`background-image: url(${profile})`} />
+        <div class="skill_left" style={`background-image: url(${back2})`}>
+          <div class="skill_left_video">
+            <video class="skill_video" src={ai} loop muted autoplay />
+          </div>
+          <div class="skill_other">AI & Machine Learning</div>
+          <div class="skill_interested">INTERESTED IN</div>
+        </div>
       </div>
     </div>
     <!-- 🔥🔥🔥 ExperienceSection 🔥🔥🔥 -->
