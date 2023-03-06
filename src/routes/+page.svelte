@@ -322,7 +322,7 @@
             <video class="skill_right_video" src={ai} loop muted autoplay />
           </div>
           <div class="skill_right_other">AI & Machine Learning</div>
-          <div class="skill_right_interested">INTERESTED IN</div>
+          <div class="skill_right_interested">A RESEARCH BY ME</div>
         </div>
       </div>
     </div>

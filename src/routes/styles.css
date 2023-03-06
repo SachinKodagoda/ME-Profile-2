@@ -727,7 +727,7 @@ body {
   background: #ffbf00e7;
   color: #000;
   transform: rotateZ(-40deg);
-  transform-origin: 175px 140px;
+  transform-origin: 190px 140px;
   width: 300px;
   display: flex;
   align-items: center;
