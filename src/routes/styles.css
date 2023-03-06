@@ -3,7 +3,6 @@
   --body-color: #000;
   font-family: var(--font-body);
   color: var(--color-text);
-  --pin-value: 0;
   --s0: 1px;
   --s1: 2px;
   --s2: 4px;
@@ -1123,13 +1122,6 @@ body {
   display: flex;
   will-change: transform;
 }
-
-/* .pin_content_1 {
-  transform: translateX(calc(var(--pin-value) * -1%));
-}
-.pin_content_2 {
-  transform: translateX(calc(var(--pin-value) * 1% - 20%));
-} */
 
 .pin_box {
   width: 60vw;

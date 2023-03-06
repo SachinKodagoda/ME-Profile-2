@@ -10,7 +10,6 @@
   import linkedin from '$lib/images/icon-linkedin.svg';
   import medium from '$lib/images/icon-medium.svg';
   import youtube from '$lib/images/icon-youtube.svg';
-  // import inkmask from '$lib/images/inkmask.png';
   import leftCorner from '$lib/images/left_corner.svg';
   import hero from '$lib/images/main.jpg';
   import menu from '$lib/images/menu.svg';
@@ -32,14 +31,12 @@
   import { onMount } from 'svelte';
   import './normalize.css';
   import './styles.css';
+
   function handleClick() {
     alert('clicked');
   }
-  let skillValue = 0;
-  let fTxt: SVGTextElement;
-  let experience = 0;
+
   let curveValue = 0;
-  let pinValue = 0;
   const maxCurveVh = 20;
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, MotionPathPlugin);
@@ -50,6 +47,8 @@
     });
 
     const mm = gsap.matchMedia();
+
+    // 🔥🔥🔥 Section 2 - TechStack 🔥🔥🔥 -->
     gsap.fromTo(
       '.skill_background_font_inner',
       { xPercent: 100 },
@@ -57,49 +56,12 @@
         xPercent: -100,
         scrollTrigger: {
           trigger: '.skill_background_font_inner',
-          scrub: true,
-          onUpdate: (self) => {
-            skillValue = self.progress * 1.5;
-          }
+          scrub: true
         }
       }
     );
-    // ScrollTrigger.create({
-    //   trigger: '.skill_background_font_inner',
-    //   scrub: true,
-    //   start: 'top bottom',
-    //   end: 'bottom top',
-    //   markers: true,
-    //   onUpdate: (self) => {
-    //     skillValue = self.progress * 1.5;
-    //   }
-    // });
 
-    //  🔥🔥🔥 ExperienceSection 🔥🔥🔥
-
-    // gsap
-    //   .timeline({
-    //     defaults: { duration: 1, autoAlpha: 1 },
-    //     scrollTrigger: {
-    //       trigger: '.experience_fullstack_engineer_ctr',
-    //       scrub: true,
-    //       start: 'top bottom',
-    //       end: 'bottom top'
-    //     }
-    //   })
-    //   .add('start')
-    //   // .to('.experience_section_top', { duration: 1, autoAlpha: 0 }, 'start')
-    //   .to('.experience_fullstack_engineer_ctr', { scale: 1.5 }, 'start');
-
-    // ScrollTrigger.create({
-    //   trigger: '.experience_section_top',
-    //   scrub: true,
-    //   markers: true,
-    //   pin: true,
-    //   start: 'top top',
-    //   end: 'bottom top'
-    // });
-
+    // 🔥🔥🔥 Section 3 - I'M 🔥🔥🔥 -->
     gsap
       .timeline({
         defaults: { duration: 1, autoAlpha: 1 },
@@ -114,6 +76,35 @@
       })
       .to('.experience_section_top', { duration: 0.01, autoAlpha: 0.1 });
 
+    // 🔥🔥🔥 Section 4 - Work 🔥🔥🔥 -->
+    gsap.fromTo(
+      '.pin_content_1',
+      { xPercent: 0 },
+      {
+        xPercent: -33,
+        scrollTrigger: {
+          trigger: '.pin_content_1',
+          scrub: true,
+          start: 'top bottom',
+          end: 'bottom top'
+        }
+      }
+    );
+    gsap.fromTo(
+      '.pin_content_2',
+      { xPercent: -33 },
+      {
+        xPercent: 0,
+        scrollTrigger: {
+          trigger: '.pin_content_2',
+          scrub: true,
+          start: 'top bottom',
+          end: 'bottom top'
+        }
+      }
+    );
+
+    // 🔥🔥🔥 Section 5 - Experience 🔥🔥🔥 -->
     const pulses = gsap
       .timeline({
         defaults: {
@@ -170,7 +161,8 @@
       )
       .add(pulses, 0)
       .add(lines, 0);
-    //  🔥🔥🔥 FooterSection 🔥🔥🔥
+
+    //  🔥🔥🔥 Section6 - Footer 🔥🔥🔥 -->
     mm.add('(max-width: 768px)', () => {
       curveValue = 0;
       ScrollTrigger.create({
@@ -195,33 +187,6 @@
         }
       });
     });
-
-    gsap.fromTo(
-      '.pin_content_1',
-      { xPercent: 0 },
-      {
-        xPercent: -33,
-        scrollTrigger: {
-          trigger: '.pin_content_1',
-          scrub: true,
-          start: 'top bottom',
-          end: 'bottom top'
-        }
-      }
-    );
-    gsap.fromTo(
-      '.pin_content_2',
-      { xPercent: -33 },
-      {
-        xPercent: 0,
-        scrollTrigger: {
-          trigger: '.pin_content_2',
-          scrub: true,
-          start: 'top bottom',
-          end: 'bottom top'
-        }
-      }
-    );
   });
 </script>
 
@@ -358,7 +323,7 @@
       </div>
       <!-- 🔥🔥🔥 PinSection 🔥🔥🔥 -->
       <div class="white_hider" />
-      <section class="pin_section" style="--pin-value: {pinValue}">
+      <section class="pin_section">
         <div class="pin_content pin_content_1">
           <div class="pin_box">
             <div class="pin_box_inner"><img class="pin_image" src={v1} alt="img" /></div>
@@ -389,7 +354,7 @@
           </div>
         </div>
       </section>
-      <section class="experience_hero_section" bind:offsetHeight={experience} id="time_line_id">
+      <section class="experience_hero_section" id="time_line_id">
         <div class="experience_time_line">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" class="experience_time_line_svg" preserveAspectRatio="none">
             <path class="experience_line01 experience_line" d="M 245 100 265 100" />
@@ -436,7 +401,6 @@
         </div>
         <div class="experience_hero_ctr">
           <img src={hero} alt="hero" class="experience_hero_img" id="experience_hero_img" />
-          <!-- <div id="mask" class="experience_mask_ctr" style={`background-image: url(${hero}); -webkit-mask-image: url(${inkmask}); mask-image: url(${inkmask});`} /> -->
           <img src={fire} alt="fire" class="experience_fire" />
         </div>
       </section>
