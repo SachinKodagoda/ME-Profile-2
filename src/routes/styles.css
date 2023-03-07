@@ -519,6 +519,45 @@ body {
   will-change: transform;
 }
 
+.gopher {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gopher_img {
+  position: absolute;
+  left: 2%;
+  top: 0;
+  width: 100px;
+  height: auto;
+  transform: translateY(-25%);
+  transition: transform 400ms ease-in-out;
+}
+
+.skill_stack {
+  position: relative;
+  transform: translate(-50%, calc(-100% + 0.2rem));
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: #fff;
+  width: max-content;
+  border-radius: 20px 20px 0 0;
+  border: 4px solid #000;
+  font-size: 2rem;
+}
+
+.skill_safer {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
 .skill_left {
   color: #22017b;
   border: 8px solid #111;
@@ -536,6 +575,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.skill_left:hover ~ .gopher > svg {
+  transform: translateY(-45%);
 }
 
 .skill_left_inner {
