@@ -846,10 +846,24 @@ body {
   position: relative;
 }
 
+.experience_fullstack_engineer_ctr {
+  position: relative;
+}
+
 .experience_cloud {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.experience_land {
+  width: auto;
+  height: 120%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 20%);
+  z-index: 1;
 }
 
 .experience_fullstack_engineer_txt {

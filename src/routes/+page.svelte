@@ -52,6 +52,20 @@
   }
   let angleVal = 0;
   let scrollBox: HTMLDivElement;
+
+  const animation = {
+    url: '/wp-content/themes/madwell/images/homepage/Island_watertower.png',
+    width: 380,
+    height: 468.4733,
+    position: { desktop: [980, 80], tablet: [250, 330], mobile: [120, 450] },
+    movement: 11,
+    spritesheets: [
+      { url: '/wp-content/themes/madwell/images/homepage/animations/Bulbs_spritesheet_192x147.png', width: 96, height: 73, fileHeight: 730, top: 200, left: 143, frames: 10, fps: 10 },
+      { url: '/wp-content/themes/madwell/images/homepage/animations/cup_spritesheet_67x193.png', width: 33.5, height: 96.45, fileHeight: 964.5, top: 165, left: 16, frames: 10, fps: 10 },
+      { url: '/wp-content/themes/madwell/images/homepage/animations/waterwheel_spritesheet_216x145.png', width: 104, height: 67.1296, fileHeight: 671.296, top: 128, left: 203, frames: 10, fps: 10 }
+    ]
+  };
+
   function mouseHandler(e: MouseEvent) {
     console.log(e, scrollBox);
     const mouseX = e?.clientX;
@@ -363,6 +377,7 @@
     <section class="experience_section">
       <div class="experience_fullstack_engineer_ctr">
         <img src={cloud} alt="cloud" class="experience_cloud" />
+        <!-- <img src={land} alt="land" class="experience_land" /> -->
       </div>
       <!-- 🔥🔥🔥 PinSection 🔥🔥🔥 -->
       <div class="white_hider" />
