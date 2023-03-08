@@ -12,6 +12,7 @@
   import medium from '$lib/images/icon-medium.svg';
   import youtube from '$lib/images/icon-youtube.svg';
   import leftCorner from '$lib/images/left_corner.svg';
+  import logo_ai from '$lib/images/logo-ai.svg';
   import logo_angular from '$lib/images/logo-angular.svg';
   import logo_aws from '$lib/images/logo-aws.svg';
   import logo_css from '$lib/images/logo-css.svg';
@@ -332,7 +333,7 @@
             <img src={logo_mysql} alt="react" class="skill_icon s_item11" />
             <img src={logo_firebase} alt="react" class="skill_icon s_item12" />
             <div class="skill_word s_item13">
-              <span>THIS IS <span class="my_skill">MY</span></span>
+              <span>HERE IS <span class="my_skill">MY</span></span>
               <span class="my_skill">TECHNOLOGY</span>
               <span class="my_skill">STACK <img src={rocket} alt="react" class="skill_rocket" /></span>
             </div>
@@ -342,8 +343,14 @@
           <div class="skill_right_video">
             <video class="skill_right_video" src={ai} loop muted autoplay />
           </div>
-          <div class="skill_right_other">AI & Machine Learning</div>
-          <div class="skill_right_interested">AI RESEARCH</div>
+          <div class="skill_right_other">
+            <img src={logo_ai} alt="react" class="ai_logo" />
+            <div>
+              <span class="my_skill">AI</span>{' '}&{' '}
+              <span class="my_skill">MACHINE LEARNING</span>
+            </div>
+          </div>
+          <div class="skill_right_interested"><span class="my_skill">&#9829;ML</span>&nbsp;RESEARCH&#9829;</div>
         </div>
       </div>
     </div>
