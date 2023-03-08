@@ -856,12 +856,52 @@ body {
   display: block;
 }
 
-.experience_land {
+.experience_land1 {
   width: auto;
   height: 120%;
   position: absolute;
   left: 50%;
   bottom: 0;
+  transform: translate(-50%, 20%);
+  z-index: 2;
+}
+
+.experience_land2 {
+  width: auto;
+  height: 70%;
+  position: absolute;
+  left: 70%;
+  bottom: 20%;
+  transform: translate(-50%, 20%);
+  z-index: 1;
+}
+
+.experience_land3 {
+  width: auto;
+  height: 40%;
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
+  transform: translate(-50%, 20%);
+  z-index: 1;
+}
+
+.experience_land4 {
+  width: auto;
+  height: 50%;
+  position: absolute;
+  left: 30%;
+  bottom: 40%;
+  transform: translate(-50%, 20%);
+  z-index: 1;
+}
+
+.experience_land5 {
+  width: auto;
+  height: 50%;
+  position: absolute;
+  left: 90%;
+  bottom: 0%;
   transform: translate(-50%, 20%);
   z-index: 1;
 }

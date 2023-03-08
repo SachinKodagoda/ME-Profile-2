@@ -11,6 +11,11 @@
   import linkedin from '$lib/images/icon-linkedin.svg';
   import medium from '$lib/images/icon-medium.svg';
   import youtube from '$lib/images/icon-youtube.svg';
+  import land1 from '$lib/images/land1.png';
+  import land2 from '$lib/images/land2.png';
+  import land3 from '$lib/images/land3.png';
+  import land4 from '$lib/images/land4.png';
+  import land5 from '$lib/images/land5.png';
   import leftCorner from '$lib/images/left_corner.svg';
   import logo_ai from '$lib/images/logo-ai.svg';
   import logo_angular from '$lib/images/logo-angular.svg';
@@ -377,7 +382,11 @@
     <section class="experience_section">
       <div class="experience_fullstack_engineer_ctr">
         <img src={cloud} alt="cloud" class="experience_cloud" />
-        <!-- <img src={land} alt="land" class="experience_land" /> -->
+        <img src={land1} alt="land" class="experience_land1" />
+        <img src={land2} alt="land" class="experience_land2" />
+        <img src={land3} alt="land" class="experience_land3" />
+        <img src={land4} alt="land" class="experience_land4" />
+        <img src={land5} alt="land" class="experience_land5" />
       </div>
       <!-- 🔥🔥🔥 PinSection 🔥🔥🔥 -->
       <div class="white_hider" />
