@@ -856,6 +856,18 @@ body {
   display: block;
 }
 
+/* @keyframes float {
+  0% {
+    transform: translate(-50%, 20%);
+  }
+  50% {
+    transform: translate(-51%, 16%);
+  }
+  100% {
+    transform: translate(-50%, 20%);
+  }
+} */
+
 .experience_land1 {
   width: auto;
   height: 120%;
@@ -863,6 +875,7 @@ body {
   left: 50%;
   bottom: 0;
   transform: translate(-50%, 20%);
+  /* animation: float 6s ease-in-out infinite; */
   z-index: 2;
 }
 
