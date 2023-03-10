@@ -11,11 +11,6 @@
   import linkedin from '$lib/images/icon-linkedin.svg';
   import medium from '$lib/images/icon-medium.svg';
   import youtube from '$lib/images/icon-youtube.svg';
-  import land1 from '$lib/images/land1.png';
-  import land2 from '$lib/images/land2.png';
-  import land3 from '$lib/images/land3.png';
-  import land4 from '$lib/images/land4.png';
-  import land5 from '$lib/images/land5.png';
   import leftCorner from '$lib/images/left_corner.svg';
   import logo_ai from '$lib/images/logo-ai.svg';
   import logo_angular from '$lib/images/logo-angular.svg';
@@ -58,18 +53,7 @@
   let angleVal = 0;
   let scrollBox: HTMLDivElement;
 
-  const animation = {
-    url: '/wp-content/themes/madwell/images/homepage/Island_watertower.png',
-    width: 380,
-    height: 468.4733,
-    position: { desktop: [980, 80], tablet: [250, 330], mobile: [120, 450] },
-    movement: 11,
-    spritesheets: [
-      { url: '/wp-content/themes/madwell/images/homepage/animations/Bulbs_spritesheet_192x147.png', width: 96, height: 73, fileHeight: 730, top: 200, left: 143, frames: 10, fps: 10 },
-      { url: '/wp-content/themes/madwell/images/homepage/animations/cup_spritesheet_67x193.png', width: 33.5, height: 96.45, fileHeight: 964.5, top: 165, left: 16, frames: 10, fps: 10 },
-      { url: '/wp-content/themes/madwell/images/homepage/animations/waterwheel_spritesheet_216x145.png', width: 104, height: 67.1296, fileHeight: 671.296, top: 128, left: 203, frames: 10, fps: 10 }
-    ]
-  };
+  let canvasElement: HTMLCanvasElement;
 
   function mouseHandler(e: MouseEvent) {
     console.log(e, scrollBox);
@@ -382,11 +366,15 @@
     <section class="experience_section">
       <div class="experience_fullstack_engineer_ctr">
         <img src={cloud} alt="cloud" class="experience_cloud" />
-        <img src={land1} alt="land" class="experience_land1" />
-        <img src={land2} alt="land" class="experience_land2" />
-        <img src={land3} alt="land" class="experience_land3" />
-        <img src={land4} alt="land" class="experience_land4" />
-        <img src={land5} alt="land" class="experience_land5" />
+        <div class="base_img1">
+          <!-- <img src={land1} alt="land" class="experience_land1" />
+          <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+            <image href="mdn_logo_only_color.png" height="200" width="200" />
+          </svg>
+          <div class="experience_wheel" />
+          <div class="experience_bulb" />
+          <div class="experience_cup" /> -->
+        </div>
       </div>
       <!-- 🔥🔥🔥 PinSection 🔥🔥🔥 -->
       <div class="white_hider" />
