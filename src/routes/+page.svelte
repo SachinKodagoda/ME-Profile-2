@@ -5,6 +5,7 @@
   import cloud from '$lib/images/cloud6.png';
   import logo from '$lib/images/dk-logo.svg';
   import download from '$lib/images/download.svg';
+  import final_land from '$lib/images/final_land.png';
   import fire from '$lib/images/fire.gif';
   import codepen from '$lib/images/icon-codepen.svg';
   import github from '$lib/images/icon-github.svg';
@@ -112,6 +113,20 @@
         }
       })
       .to('.experience_section_top', { duration: 0.01, autoAlpha: 0.1 });
+
+    gsap.fromTo(
+      '.base_img',
+      { yPercent: 0 },
+      {
+        yPercent: -50,
+        scrollTrigger: {
+          trigger: '.experience_cloud',
+          scrub: true,
+          start: 'top bottom',
+          end: 'bottom top'
+        }
+      }
+    );
 
     // 🔥🔥🔥 Section 4 - Work 🔥🔥🔥 -->
     gsap.fromTo(
@@ -366,14 +381,9 @@
     <section class="experience_section">
       <div class="experience_fullstack_engineer_ctr">
         <img src={cloud} alt="cloud" class="experience_cloud" />
-        <div class="base_img1">
-          <!-- <img src={land1} alt="land" class="experience_land1" />
-          <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-            <image href="mdn_logo_only_color.png" height="200" width="200" />
-          </svg>
-          <div class="experience_wheel" />
-          <div class="experience_bulb" />
-          <div class="experience_cup" /> -->
+        <div class="base_img">
+          <img src={final_land} alt="land" class="experience_land" />
+          <div class="experience_land_ctr" />
         </div>
       </div>
       <!-- 🔥🔥🔥 PinSection 🔥🔥🔥 -->

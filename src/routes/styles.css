@@ -856,162 +856,76 @@ body {
   display: block;
 }
 
-/* @keyframes float {
-  0% {
-    transform: translate(-50%, 20%);
+.base_img {
+  width: auto;
+  height: 150%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1/1;
+  position: absolute;
+  z-index: 1;
+}
+
+.experience_land {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.experience_land_animated {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: block;
+}
+
+@keyframes image_animation {
+  10% {
+    background-image: url('$lib/images/s01.png');
+  }
+  20% {
+    background-image: url('$lib/images/s02.png');
+  }
+  30% {
+    background-image: url('$lib/images/s03.png');
+  }
+  40% {
+    background-image: url('$lib/images/s04.png');
   }
   50% {
-    transform: translate(-51%, 16%);
+    background-image: url('$lib/images/s05.png');
+  }
+  60% {
+    background-image: url('$lib/images/s06.png');
+  }
+  70% {
+    background-image: url('$lib/images/s07.png');
+  }
+  80% {
+    background-image: url('$lib/images/s08.png');
+  }
+  90% {
+    background-image: url('$lib/images/s09.png');
   }
   100% {
-    transform: translate(-50%, 20%);
-  }
-} */
-
-.experience_land1 {
-  width: 786px;
-  height: auto;
-  transform: scale(0.5);
-}
-
-.base_img1 {
-  width: auto;
-  height: 120%;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 20%);
-  z-index: 2;
-}
-
-@keyframes wheel_rotate {
-  to {
-    background-position-y: calc(145px * -10);
+    background-image: url('$lib/images/s10.png');
   }
 }
 
-@keyframes cup_rotate {
-  to {
-    background-position-y: calc(193px * -10);
-  }
-}
-
-@keyframes bulb_rotate {
-  to {
-    background-position-y: calc(146px * -10);
-  }
-}
-
-.my_canvas {
-  width: 786px;
-  height: auto;
-  background: green;
-}
-
-.experience_wheel {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 145px;
-  width: 216px;
-  top: 265px;
-  left: 420px;
-  display: inline-block;
-  background: url($lib/images/wheel.png);
-  animation: wheel_rotate 0.5s steps(10) infinite;
-  transform: scale(0.5);
-}
-
-.experience_bulb {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 146px;
-  width: 192px;
-  top: 414px;
-  left: 300px;
-  display: inline-block;
-  background: url($lib/images/bulb.png);
-  animation: bulb_rotate 0.5s steps(10) infinite;
-  transform: scale(0.5);
-}
-
-.experience_cup {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 193px;
-  width: 67px;
-  top: 342px;
-  left: 32px;
-  display: inline-block;
-  background: url($lib/images/cup.png);
-  animation: cup_rotate 0.5s steps(10) infinite;
-  transform: scale(0.5);
-}
-
-@media only screen and (min-width: 1024) {
-  .experience_cup,
-  .experience_bulb,
-  .experience_wheel,
-  .experience_land1 {
-    transform: scale(1);
-  }
-}
-
-.experience_land2 {
-  width: auto;
-  height: 70%;
-  position: absolute;
-  left: 70%;
-  bottom: 20%;
-  transform: translate(-50%, 20%);
-  z-index: 1;
-}
-
-.experience_land3 {
-  width: auto;
-  height: 40%;
-  position: absolute;
-  left: 30%;
-  bottom: 10%;
-  transform: translate(-50%, 20%);
-  z-index: 1;
-}
-
-.experience_land4 {
-  width: auto;
-  height: 50%;
-  position: absolute;
-  left: 30%;
-  bottom: 40%;
-  transform: translate(-50%, 20%);
-  z-index: 1;
-}
-
-.experience_land5 {
-  width: auto;
-  height: 50%;
-  position: absolute;
-  left: 90%;
-  bottom: 0%;
-  transform: translate(-50%, 20%);
-  z-index: 1;
-}
-
-.experience_fullstack_engineer_txt {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.experience_land_ctr {
+  background-image: url('$lib/images/s01.png');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
-  z-index: 2;
-  will-change: transform;
-}
-.experience_svg {
-  width: 100%;
-  display: block;
-  font-size: 4rem;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: image_animation 0.5s linear infinite;
 }
 
 .experience_hero_section {
